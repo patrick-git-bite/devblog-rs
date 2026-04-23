@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorias — DevBlog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">&#60;/&#62;</span>
+        <a href="index.html">Dev<span>Blog</span></a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.querySelector('.main-nav').classList.toggle('active')">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html">Artigos</a></li>
+          <li><a href="categorias.html" class="active">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h1>Categorias</h1>
+    <p>Explore nossos artigos organizados por área de conhecimento. Clique em uma categoria para ver os artigos.</p>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-content">
+
+    <!-- GRID DE CATEGORIAS (clicáveis com âncoras) -->
+    <div class="categories-grid">
+
+      <a href="#web" class="category-card">
+        <div class="category-icon">🌐</div>
+        <h3>Desenvolvimento Web</h3>
+        <p>HTML, CSS, JavaScript, frameworks front-end e back-end, APIs e tudo sobre a web moderna.</p>
+        <span class="category-count">1 artigo publicado</span>
+      </a>
+
+      <a href="#mobile" class="category-card">
+        <div class="category-icon">📱</div>
+        <h3>Mobile</h3>
+        <p>Desenvolvimento de apps com React Native, Flutter, Swift e Kotlin para iOS e Android.</p>
+        <span class="category-count">1 artigo publicado</span>
+      </a>
+
+      <a href="#ia" class="category-card">
+        <div class="category-icon">🤖</div>
+        <h3>Inteligência Artificial</h3>
+        <p>Machine Learning, Deep Learning, processamento de linguagem natural e IA generativa.</p>
+        <span class="category-count">1 artigo publicado</span>
+      </a>
+
+      <a href="#seguranca" class="category-card">
+        <div class="category-icon">🔒</div>
+        <h3>Segurança</h3>
+        <p>Cibersegurança, OWASP, criptografia, boas práticas de segurança em aplicações.</p>
+        <span class="category-count">1 artigo publicado</span>
+      </a>
+
+      <a href="#devops" class="category-card">
+        <div class="category-icon">⚙️</div>
+        <h3>DevOps</h3>
+        <p>Docker, Kubernetes, CI/CD, automação de deploy e infraestrutura como código.</p>
+        <span class="category-count">1 artigo publicado</span>
+      </a>
+
+      <a href="#data" class="category-card">
+        <div class="category-icon">📊</div>
+        <h3>Data Science</h3>
+        <p>Análise de dados com Python, visualização, estatística e Big Data.</p>
+        <span class="category-count">1 artigo publicado</span>
+      </a>
+
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SEÇÕES DE ARTIGOS POR CATEGORIA -->
+    <!-- ============================================================ -->
+
+    <!-- DESENVOLVIMENTO WEB -->
+    <section id="web" class="category-section">
+      <h2 class="section-title">🌐 Desenvolvimento Web</h2>
+      <p class="category-description">Artigos sobre HTML, CSS, JavaScript, frameworks e o ecossistema web moderno. Desde os fundamentos até técnicas avançadas de front-end e back-end.</p>
+
+      <div class="articles-grid">
+        <article class="article-card">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="Código fonte em tela de monitor com sintaxe colorida" class="article-card-img">
+          <div class="article-card-body">
+            <span class="article-card-category">Desenvolvimento Web</span>
+            <h3><a href="artigo.html">Como começar com HTML5 e CSS3 em 2025</a></h3>
+            <p>Um guia completo para quem está dando os primeiros passos no desenvolvimento web moderno. Aprenda sobre tags semânticas, Flexbox, Grid e responsividade.</p>
+            <div class="article-meta">
+              <span class="author">Por Patrick</span>
+              <time datetime="2025-04-01">01 Abr 2025</time>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MOBILE -->
+    <section id="mobile" class="category-section">
+      <h2 class="section-title">📱 Mobile</h2>
+      <p class="category-description">Tudo sobre desenvolvimento de aplicativos móveis multiplataforma. Comparativos, tutoriais e tendências do mercado de apps para iOS e Android.</p>
+
+      <div class="articles-grid">
+        <article class="article-card">
+          <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=600&h=400&fit=crop" alt="Smartphone exibindo aplicativo mobile em desenvolvimento" class="article-card-img">
+          <div class="article-card-body">
+            <span class="article-card-category">Mobile</span>
+            <h3><a href="artigo-mobile.html">React Native vs Flutter: qual escolher em 2025?</a></h3>
+            <p>Comparativo detalhado entre os dois frameworks mais populares para desenvolvimento mobile. Linguagem, performance, UI, ecossistema e mercado de trabalho.</p>
+            <div class="article-meta">
+              <span class="author">Por Patrick</span>
+              <time datetime="2025-03-20">20 Mar 2025</time>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- INTELIGÊNCIA ARTIFICIAL -->
+    <section id="ia" class="category-section">
+      <h2 class="section-title">🤖 Inteligência Artificial</h2>
+      <p class="category-description">Exploramos o mundo da IA: modelos de linguagem, IA generativa, machine learning e como essas tecnologias estão impactando o mercado de trabalho e o desenvolvimento de software.</p>
+
+      <div class="articles-grid">
+        <article class="article-card">
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" alt="Ilustração de inteligência artificial com circuitos e redes neurais" class="article-card-img">
+          <div class="article-card-body">
+            <span class="article-card-category">Inteligência Artificial</span>
+            <h3><a href="artigo-ia.html">O impacto da IA generativa no mercado de trabalho</a></h3>
+            <p>Como ferramentas como ChatGPT, Copilot e Claude estão transformando a forma como programamos. Novas habilidades necessárias e o futuro da colaboração humano-IA.</p>
+            <div class="article-meta">
+              <span class="author">Por Rafael</span>
+              <time datetime="2025-03-28">28 Mar 2025</time>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEGURANÇA -->
+    <section id="seguranca" class="category-section">
+      <h2 class="section-title">🔒 Segurança</h2>
+      <p class="category-description">Artigos sobre cibersegurança para desenvolvedores. Vulnerabilidades comuns, boas práticas de codificação segura, OWASP e ferramentas de análise de segurança.</p>
+
+      <div class="articles-grid">
+        <article class="article-card">
+          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop" alt="Cadeado digital sobre fundo de dados binários representando segurança" class="article-card-img">
+          <div class="article-card-body">
+            <span class="article-card-category">Segurança</span>
+            <h3><a href="artigo-seguranca.html">Top 10 OWASP: vulnerabilidades que todo dev precisa conhecer</a></h3>
+            <p>As 10 falhas de segurança mais críticas em aplicações web segundo a OWASP. SQL Injection, XSS, CSRF e como se proteger com exemplos de código.</p>
+            <div class="article-meta">
+              <span class="author">Por Rafael</span>
+              <time datetime="2025-03-15">15 Mar 2025</time>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DEVOPS -->
+    <section id="devops" class="category-section">
+      <h2 class="section-title">⚙️ DevOps</h2>
+      <p class="category-description">Automatize tudo! Docker, containers, CI/CD, Kubernetes, infraestrutura como código e práticas de DevOps para acelerar o ciclo de desenvolvimento.</p>
+
+      <div class="articles-grid">
+        <article class="article-card">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop" alt="Servidor de dados com cabos de rede e luzes LED" class="article-card-img">
+          <div class="article-card-body">
+            <span class="article-card-category">DevOps</span>
+            <h3><a href="artigo-docker.html">Introdução ao Docker: containers para desenvolvedores</a></h3>
+            <p>Entenda o que é Docker, Dockerfile, Docker Compose e por que containers são essenciais no desenvolvimento moderno. Com exemplos práticos e comandos essenciais.</p>
+            <div class="article-meta">
+              <span class="author">Por Pedro</span>
+              <time datetime="2025-03-25">25 Mar 2025</time>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DATA SCIENCE -->
+    <section id="data" class="category-section">
+      <h2 class="section-title">📊 Data Science</h2>
+      <p class="category-description">Análise de dados, ciência de dados e visualização com Python. Pandas, NumPy, Matplotlib, Seaborn e as melhores práticas para transformar dados em insights.</p>
+
+      <div class="articles-grid">
+        <article class="article-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Dashboard com gráficos e análise de dados em tela de computador" class="article-card-img">
+          <div class="article-card-body">
+            <span class="article-card-category">Data Science</span>
+            <h3><a href="artigo-python.html">Python para análise de dados: primeiros passos</a></h3>
+            <p>Aprenda a usar Python, Pandas, NumPy e Matplotlib para manipular, analisar e visualizar dados. Com exemplos de código e fluxo de trabalho completo.</p>
+            <div class="article-meta">
+              <span class="author">Por Pedro</span>
+              <time datetime="2025-03-10">10 Mar 2025</time>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>&#60;/&#62; DevBlog</h3>
+        <p>Um blog criado por estudantes apaixonados por tecnologia e programação. Compartilhamos conhecimento sobre desenvolvimento web, mobile, IA e muito mais.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html">Artigos</a></li>
+          <li><a href="categorias.html">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Redes Sociais</h3>
+        <div class="social-icons">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">IN</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">TW</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DevBlog — Patrick, Rafael e Pedro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

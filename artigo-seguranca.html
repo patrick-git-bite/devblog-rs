@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 OWASP: vulnerabilidades que todo dev precisa conhecer — DevBlog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">&#60;/&#62;</span>
+        <a href="index.html">Dev<span>Blog</span></a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.querySelector('.main-nav').classList.toggle('active')">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html" class="active">Artigos</a></li>
+          <li><a href="categorias.html">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article-full">
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="categorias.html#seguranca">Segurança</a>
+      <span>›</span>
+      OWASP Top 10
+    </nav>
+
+    <div class="article-header">
+      <span class="article-card-category">Segurança</span>
+      <h1>Top 10 OWASP: vulnerabilidades que todo dev precisa conhecer</h1>
+      <div class="article-meta">
+        <span class="author">Por Rafael</span>
+        <time datetime="2025-03-15">15 de Março de 2025</time>
+      </div>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=500&fit=crop" alt="Cadeado digital sobre fundo de dados binários representando segurança" class="article-cover">
+
+    <article class="article-body">
+      <p>Segurança deveria ser a preocupação número um de todo desenvolvedor, mas infelizmente muitas vezes ela é tratada como um "detalhe" a ser resolvido depois. A <strong>OWASP (Open Worldwide Application Security Project)</strong> é uma organização sem fins lucrativos que mantém uma lista das 10 vulnerabilidades mais críticas em aplicações web — o famoso <strong>OWASP Top 10</strong>.</p>
+
+      <blockquote>
+        "Segurança não é um recurso — é um requisito fundamental. Cada linha de código que você escreve é uma oportunidade de proteger ou expor seus usuários."
+      </blockquote>
+
+      <h2>O que é a OWASP?</h2>
+      <p>A OWASP é uma comunidade aberta dedicada a melhorar a segurança de software. Fundada em 2001, ela produz ferramentas, documentação e padrões gratuitos que são referência mundial. O OWASP Top 10 é atualizado periodicamente (última versão: 2021) e serve como guia obrigatório para desenvolvedores e auditores de segurança.</p>
+
+      <h2>As 10 principais vulnerabilidades</h2>
+
+      <h3>1. A01 — Quebra de Controle de Acesso (Broken Access Control)</h3>
+      <p>Ocorre quando usuários conseguem acessar recursos ou executar ações que não deveriam ser permitidas. Exemplos: acessar dados de outro usuário alterando um ID na URL, acessar painel administrativo sem ser admin.</p>
+      <pre><code>// VULNERÁVEL: sem verificação de permissão
+app.get('/api/usuarios/:id', (req, res) =&gt; {
+  const usuario = db.buscarUsuario(req.params.id);
+  res.json(usuario);
+});
+
+// SEGURO: verificação de autorização
+app.get('/api/usuarios/:id', autenticar, (req, res) =&gt; {
+  if (req.usuario.id !== req.params.id &amp;&amp; !req.usuario.isAdmin) {
+    return res.status(403).json({ erro: 'Acesso negado' });
+  }
+  const usuario = db.buscarUsuario(req.params.id);
+  res.json(usuario);
+});</code></pre>
+
+      <h3>2. A02 — Falhas Criptográficas (Cryptographic Failures)</h3>
+      <p>Dados sensíveis (senhas, cartões de crédito, dados pessoais) armazenados ou transmitidos sem criptografia adequada. Inclui uso de algoritmos obsoletos como MD5 ou SHA1 para senhas.</p>
+      <ul>
+        <li>Sempre use HTTPS para transmissão de dados</li>
+        <li>Use <code>bcrypt</code> ou <code>argon2</code> para hash de senhas, nunca MD5 ou SHA1</li>
+        <li>Criptografe dados sensíveis em repouso no banco de dados</li>
+      </ul>
+
+      <h3>3. A03 — Injeção (Injection)</h3>
+      <p>Dados não confiáveis são enviados como parte de um comando ou consulta. O tipo mais conhecido é o <strong>SQL Injection</strong>, mas também inclui injeção de comandos OS, LDAP e NoSQL.</p>
+      <pre><code>// VULNERÁVEL: SQL Injection
+const query = "SELECT * FROM usuarios WHERE nome = '" + nome + "'";
+
+// SEGURO: Consulta parametrizada
+const query = "SELECT * FROM usuarios WHERE nome = $1";
+db.query(query, [nome]);</code></pre>
+
+      <h3>4. A04 — Design Inseguro (Insecure Design)</h3>
+      <p>Falhas de arquitetura e design que não podem ser corrigidas apenas com código. Inclui falta de modelagem de ameaças, ausência de princípio de menor privilégio e design que não considera cenários de abuso.</p>
+
+      <h3>5. A05 — Configuração Insegura (Security Misconfiguration)</h3>
+      <p>Configurações padrão inseguras, recursos desnecessários habilitados, mensagens de erro detalhadas expostas ao usuário, cabeçalhos HTTP de segurança ausentes.</p>
+      <ul>
+        <li>Desabilite listagem de diretórios</li>
+        <li>Remova páginas e contas padrão</li>
+        <li>Configure cabeçalhos de segurança (Content-Security-Policy, X-Frame-Options)</li>
+        <li>Mantenha software e dependências atualizados</li>
+      </ul>
+
+      <h3>6. A06 — Componentes Vulneráveis (Vulnerable and Outdated Components)</h3>
+      <p>Uso de bibliotecas, frameworks ou dependências com vulnerabilidades conhecidas. Ferramentas como <code>npm audit</code> e <a href="https://snyk.io/" target="_blank" rel="noopener noreferrer">Snyk</a> ajudam a detectar esses problemas.</p>
+
+      <pre><code># Verificar vulnerabilidades em projetos Node.js
+npm audit
+
+# Corrigir automaticamente
+npm audit fix</code></pre>
+
+      <h3>7. A07 — Falhas de Identificação e Autenticação</h3>
+      <p>Implementações fracas de login, sessão e autenticação. Inclui senhas fracas permitidas, falta de proteção contra brute force e armazenamento inseguro de tokens de sessão.</p>
+
+      <h3>8. A08 — Falhas de Integridade de Software e Dados</h3>
+      <p>Código e infraestrutura que não protegem contra violações de integridade. Inclui atualizações de software sem verificação de assinatura, pipelines CI/CD inseguros e deserialização não confiável.</p>
+
+      <h3>9. A09 — Falhas de Log e Monitoramento</h3>
+      <p>Sem logs adequados e monitoramento, ataques podem passar despercebidos por dias, semanas ou meses. A detecção precoce é essencial para minimizar danos.</p>
+      <ul>
+        <li>Registre todas as falhas de login e erros de autorização</li>
+        <li>Implemente alertas para atividades suspeitas</li>
+        <li>Armazene logs de forma segura e imutável</li>
+        <li>Revise logs regularmente</li>
+      </ul>
+
+      <h3>10. A10 — Server-Side Request Forgery (SSRF)</h3>
+      <p>Ocorre quando a aplicação faz requisições HTTP a URLs fornecidas pelo usuário sem validação. Um atacante pode usar isso para acessar serviços internos, como metadados de cloud, bancos de dados ou APIs internas.</p>
+
+      <h2>Como se proteger: boas práticas gerais</h2>
+      <ol>
+        <li><strong>Validação de entrada</strong> — Nunca confie em dados do usuário. Valide e sanitize toda entrada</li>
+        <li><strong>Princípio do menor privilégio</strong> — Conceda apenas as permissões mínimas necessárias</li>
+        <li><strong>Defense in depth</strong> — Múltiplas camadas de proteção, não dependa de uma única barreira</li>
+        <li><strong>Atualizações constantes</strong> — Mantenha todas as dependências e frameworks atualizados</li>
+        <li><strong>Testes de segurança</strong> — Integre análise estática (SAST) e dinâmica (DAST) ao pipeline de CI/CD</li>
+        <li><strong>Code review</strong> — Revisão de código com foco em segurança</li>
+      </ol>
+
+      <h2>Recursos para aprender mais</h2>
+      <ul>
+        <li><a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener noreferrer">OWASP Top 10 — Site Oficial</a></li>
+        <li><a href="https://owasp.org/www-project-web-security-testing-guide/" target="_blank" rel="noopener noreferrer">OWASP Testing Guide</a></li>
+        <li><a href="https://portswigger.net/web-security" target="_blank" rel="noopener noreferrer">PortSwigger Web Security Academy</a> — Laboratório prático gratuito</li>
+      </ul>
+
+      <h2>Conclusão</h2>
+      <p>Segurança não é responsabilidade exclusiva de especialistas — todo desenvolvedor precisa conhecer pelo menos os fundamentos. O OWASP Top 10 é o ponto de partida perfeito. Ao incorporar práticas seguras desde o início do desenvolvimento, você protege seus usuários e constrói software mais robusto e confiável.</p>
+
+      <p>Veja mais artigos sobre segurança na nossa <a href="categorias.html#seguranca">seção de Segurança</a>!</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>&#60;/&#62; DevBlog</h3>
+        <p>Um blog criado por estudantes apaixonados por tecnologia e programação. Compartilhamos conhecimento sobre desenvolvimento web, mobile, IA e muito mais.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html">Artigos</a></li>
+          <li><a href="categorias.html">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Redes Sociais</h3>
+        <div class="social-icons">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">IN</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">TW</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DevBlog — Patrick, Rafael e Pedro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
