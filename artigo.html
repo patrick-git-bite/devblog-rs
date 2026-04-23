@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como começar com HTML5 e CSS3 — DevBlog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">&#60;/&#62;</span>
+        <a href="index.html">Dev<span>Blog</span></a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.querySelector('.main-nav').classList.toggle('active')">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html" class="active">Artigos</a></li>
+          <li><a href="categorias.html">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ARTIGO COMPLETO -->
+  <main class="article-full">
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="categorias.html#web">Desenvolvimento Web</a>
+      <span>›</span>
+      HTML5 e CSS3
+    </nav>
+
+    <div class="article-header">
+      <span class="article-card-category">Desenvolvimento Web</span>
+      <h1>Como começar com HTML5 e CSS3 em 2025: Guia Completo para Iniciantes</h1>
+      <div class="article-meta">
+        <span class="author">Por Patrick</span>
+        <time datetime="2025-04-01">01 de Abril de 2025</time>
+      </div>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=500&fit=crop" alt="Código fonte em tela de monitor com sintaxe colorida representando desenvolvimento web" class="article-cover">
+
+    <article class="article-body">
+      <p>O desenvolvimento web continua sendo uma das áreas mais promissoras da tecnologia. Com a evolução constante dos padrões e ferramentas, nunca foi tão acessível criar sites e aplicações web profissionais. Neste artigo, vamos explorar os fundamentos do HTML5 e CSS3, as tecnologias base de toda a web.</p>
+
+      <h2>O que é HTML5?</h2>
+      <p>HTML5 é a versão mais recente da linguagem de marcação utilizada para estruturar conteúdo na web. Ela trouxe diversas melhorias em relação às versões anteriores, incluindo novas tags semânticas, suporte a multimídia nativo e APIs poderosas para interação com o navegador.</p>
+
+      <blockquote>
+        "HTML5 não é apenas sobre novas tags — é sobre criar uma web mais semântica, acessível e poderosa para todos os usuários."
+      </blockquote>
+
+      <h3>Tags semânticas essenciais</h3>
+      <p>As tags semânticas do HTML5 ajudam tanto os navegadores quanto os mecanismos de busca a entenderem melhor a estrutura do seu conteúdo:</p>
+
+      <ul>
+        <li><code>&lt;header&gt;</code> — Cabeçalho da página ou de uma seção</li>
+        <li><code>&lt;nav&gt;</code> — Bloco de navegação com links</li>
+        <li><code>&lt;main&gt;</code> — Conteúdo principal da página</li>
+        <li><code>&lt;section&gt;</code> — Seção temática do conteúdo</li>
+        <li><code>&lt;article&gt;</code> — Conteúdo independente e auto-contido</li>
+        <li><code>&lt;aside&gt;</code> — Conteúdo complementar ou lateral</li>
+        <li><code>&lt;footer&gt;</code> — Rodapé da página ou seção</li>
+      </ul>
+
+      <h2>Estrutura básica de um documento HTML5</h2>
+      <p>Todo documento HTML5 começa com a declaração do doctype e segue uma estrutura organizada:</p>
+
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Minha Página&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Meu Site&lt;/h1&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;p&gt;Conteúdo aqui.&lt;/p&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;
+    &lt;p&gt;Rodapé&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h2>CSS3: Estilizando a web moderna</h2>
+      <p>O CSS3 é responsável por toda a apresentação visual de um site. Com ele, controlamos cores, fontes, espaçamentos, layouts e animações. As principais novidades do CSS3 incluem:</p>
+
+      <ol>
+        <li><strong>Flexbox</strong> — Sistema de layout unidimensional para alinhar e distribuir espaço entre itens</li>
+        <li><strong>CSS Grid</strong> — Sistema de layout bidimensional para criar grades complexas</li>
+        <li><strong>Media Queries</strong> — Permitem criar layouts responsivos que se adaptam a diferentes telas</li>
+        <li><strong>Variáveis CSS</strong> — Reutilização de valores com <code>--nome-variavel</code></li>
+        <li><strong>Transições e Animações</strong> — Efeitos visuais suaves sem JavaScript</li>
+      </ol>
+
+      <h3>Exemplo de Flexbox</h3>
+      <p>O Flexbox é perfeito para criar layouts flexíveis e responsivos:</p>
+
+      <pre><code>.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}</code></pre>
+
+      <h3>Media Queries para responsividade</h3>
+      <p>As media queries permitem aplicar estilos diferentes conforme o tamanho da tela do dispositivo:</p>
+
+      <pre><code>/* Desktop */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Tablet e mobile */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+
+      <h2>Boas práticas para iniciantes</h2>
+      <p>Para quem está começando, algumas dicas importantes podem acelerar o aprendizado e garantir código de qualidade:</p>
+
+      <ul>
+        <li>Sempre use a meta tag <code>viewport</code> para garantir responsividade</li>
+        <li>Prefira CSS externo em vez de estilos inline</li>
+        <li>Use tags semânticas para melhor acessibilidade e SEO</li>
+        <li>Preencha o atributo <code>alt</code> em todas as imagens</li>
+        <li>Teste seu site em diferentes navegadores e dispositivos</li>
+        <li>Valide seu código usando o <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3C Validator</a></li>
+      </ul>
+
+      <h2>Conclusão</h2>
+      <p>HTML5 e CSS3 são as bases fundamentais do desenvolvimento web. Dominar essas tecnologias é o primeiro passo para se tornar um desenvolvedor web completo. A partir dessa base sólida, você poderá avançar para JavaScript, frameworks como React ou Vue, e tecnologias de back-end.</p>
+
+      <p>Continue acompanhando o DevBlog para mais artigos sobre desenvolvimento web, dicas de programação e as últimas tendências da tecnologia!</p>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>&#60;/&#62; DevBlog</h3>
+        <p>Um blog criado por estudantes apaixonados por tecnologia e programação. Compartilhamos conhecimento sobre desenvolvimento web, mobile, IA e muito mais.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html">Artigos</a></li>
+          <li><a href="categorias.html">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Redes Sociais</h3>
+        <div class="social-icons">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">IN</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">TW</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DevBlog — Patrick, Rafael e Pedro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
