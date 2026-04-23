@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório de Entrega 1 (GA) — DevBlog</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.7;
+      padding: 2.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Capa */
+    .cover {
+      text-align: center;
+      padding: 4rem 2rem;
+      border-bottom: 3px solid #1f6feb;
+      margin-bottom: 3rem;
+    }
+    .cover h1 { font-size: 2rem; color: #1f6feb; margin-bottom: 0.5rem; }
+    .cover h2 { font-size: 1.3rem; color: #333; margin-bottom: 2rem; font-weight: 400; }
+    .cover .info { font-size: 0.95rem; color: #555; line-height: 2; }
+
+    /* Seções */
+    h2 {
+      font-size: 1.4rem;
+      color: #1f6feb;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #e0e8f0;
+    }
+    h3 {
+      font-size: 1.1rem;
+      color: #333;
+      margin: 1.5rem 0 0.5rem;
+    }
+    p { margin-bottom: 1rem; }
+    ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+
+    /* Tabelas */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid #d0d7de;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+    }
+    th {
+      background: #f0f4f8;
+      font-weight: 600;
+    }
+    tr:nth-child(even) { background: #f8fafb; }
+
+    /* Destaque */
+    .highlight {
+      background: #f0f7ff;
+      border-left: 4px solid #1f6feb;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .highlight strong { color: #1f6feb; }
+
+    /* Campo editável */
+    .editable {
+      color: #c00;
+      font-style: italic;
+    }
+
+    /* Impressão */
+    @media print {
+      body { padding: 1rem; }
+      .cover { page-break-after: always; }
+      h2 { page-break-after: avoid; }
+      table { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CAPA -->
+  <div class="cover">
+    <h1>Relatório de Entrega 1 (GA)</h1>
+    <h2>Disciplina de Programação Web</h2>
+    <div class="info">
+      <strong>Tema:</strong> Blog de Tecnologia e Programação<br>
+      <strong>Nome do projeto:</strong> DevBlog<br><br>
+      <strong>Integrantes:</strong><br>
+      Patrick — <span class="editable">[MATRÍCULA]</span><br>
+      Rafael — <span class="editable">[MATRÍCULA]</span><br>
+      Pedro — <span class="editable">[MATRÍCULA]</span><br><br>
+      <strong>Data de entrega:</strong> 07 de Maio de 2025
+    </div>
+  </div>
+
+  <!-- 1. DESCRIÇÃO DO TEMA -->
+  <h2>1. Descrição do Tema Escolhido</h2>
+  <p>
+    O tema escolhido foi o <strong>Blog de Tecnologia e Programação</strong> (Tema 5). O DevBlog é um blog técnico voltado para estudantes e desenvolvedores, com artigos sobre desenvolvimento web, mobile, inteligência artificial, segurança, DevOps e ciência de dados.
+  </p>
+  <p>
+    O blog foi pensado como um espaço informativo e educacional, com conteúdo original sobre temas relevantes à área de formação dos integrantes. O design utiliza um tema escuro inspirado no GitHub, oferecendo uma experiência visual agradável e familiar para desenvolvedores.
+  </p>
+
+  <!-- 2. MAPA DO SITE -->
+  <h2>2. Mapa do Site</h2>
+  <p>
+    O mapa do site completo está disponível no arquivo <strong>docs/sitemap.html</strong>, que pode ser aberto no navegador e impresso/salvo como PDF. Abaixo, uma visão resumida da estrutura hierárquica:
+  </p>
+
+  <div class="highlight">
+    <strong>Dica:</strong> Abra o arquivo <code>docs/sitemap.html</code> no navegador, use Ctrl+P e salve como PDF para incorporar no relatório final.
+  </div>
+
+  <pre style="background:#f0f4f8; padding:1rem; border-radius:6px; font-size:0.85rem; line-height:1.6; overflow-x:auto;">
+🏠 Home (index.html)
+├── 📝 Artigos (artigo.html) — Artigo sobre HTML5/CSS3
+│   ├── artigo-ia.html — IA Generativa
+│   ├── artigo-docker.html — Docker
+│   ├── artigo-mobile.html — React Native vs Flutter
+│   ├── artigo-seguranca.html — OWASP Top 10
+│   └── artigo-python.html — Python para Dados
+├── 📂 Categorias (categorias.html)
+│   ├── #web — Desenvolvimento Web
+│   ├── #mobile — Mobile
+│   ├── #ia — Inteligência Artificial
+│   ├── #seguranca — Segurança
+│   ├── #devops — DevOps
+│   └── #data — Data Science
+├── 🔧 Ferramentas (ferramentas.html)
+├── 👥 Sobre (sobre.html)
+└── ✉️ Contato (contato.html)
+    ├── Formulário de Newsletter
+    └── Formulário de Contato
+  </pre>
+
+  <!-- 3. DESCRIÇÃO DAS PÁGINAS -->
+  <h2>3. Descrição das Páginas Criadas</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Página</th>
+        <th>Arquivo</th>
+        <th>Finalidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Home</strong></td>
+        <td>index.html</td>
+        <td>Página inicial com hero banner, tags de temas e grid de 6 artigos recentes com imagem, resumo, autor e data. Ponto de entrada para todo o conteúdo do blog.</td>
+      </tr>
+      <tr>
+        <td><strong>Artigo (HTML5/CSS3)</strong></td>
+        <td>artigo.html</td>
+        <td>Artigo completo sobre HTML5 e CSS3 com formatação rica: blocos de código, listas, blockquote, links externos. Breadcrumb de navegação.</td>
+      </tr>
+      <tr>
+        <td><strong>Artigo (IA)</strong></td>
+        <td>artigo-ia.html</td>
+        <td>Artigo sobre o impacto da IA generativa no mercado de trabalho. Aborda ChatGPT, Copilot, novas habilidades e futuro da colaboração humano-IA.</td>
+      </tr>
+      <tr>
+        <td><strong>Artigo (Docker)</strong></td>
+        <td>artigo-docker.html</td>
+        <td>Introdução ao Docker com conceitos de containers, Dockerfile, Docker Compose, comandos essenciais e exemplos práticos.</td>
+      </tr>
+      <tr>
+        <td><strong>Artigo (Mobile)</strong></td>
+        <td>artigo-mobile.html</td>
+        <td>Comparativo React Native vs Flutter: linguagem, performance, UI, ecossistema, mercado de trabalho e exemplos de código em ambos.</td>
+      </tr>
+      <tr>
+        <td><strong>Artigo (Segurança)</strong></td>
+        <td>artigo-seguranca.html</td>
+        <td>As 10 vulnerabilidades mais críticas segundo a OWASP, com explicação, exemplos de código vulnerável vs seguro e boas práticas.</td>
+      </tr>
+      <tr>
+        <td><strong>Artigo (Python)</strong></td>
+        <td>artigo-python.html</td>
+        <td>Primeiros passos com Python para análise de dados: NumPy, Pandas, Matplotlib, Seaborn com exemplos de código e fluxo de trabalho.</td>
+      </tr>
+      <tr>
+        <td><strong>Categorias</strong></td>
+        <td>categorias.html</td>
+        <td>Organização dos artigos por tema com cards clicáveis que levam via âncora às seções com artigos de cada categoria.</td>
+      </tr>
+      <tr>
+        <td><strong>Ferramentas</strong></td>
+        <td>ferramentas.html</td>
+        <td>Lista curada de 15 ferramentas úteis organizadas em 5 seções: editores, versionamento, design, aprendizado e hospedagem.</td>
+      </tr>
+      <tr>
+        <td><strong>Sobre</strong></td>
+        <td>sobre.html</td>
+        <td>Apresentação dos 3 autores com biografia e links, além da proposta editorial do blog (conteúdo original, foco prático, acessível, atualizado).</td>
+      </tr>
+      <tr>
+        <td><strong>Contato</strong></td>
+        <td>contato.html</td>
+        <td>Dois formulários: inscrição na newsletter (nome, e-mail, área de interesse) e contato com a redação (nome, e-mail, assunto, mensagem).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 4. URL DO SITE -->
+  <h2>4. URL do Site Publicado</h2>
+  <p class="editable">[Inserir a URL do site publicado via FTP aqui]</p>
+
+  <!-- 5. URL DO GITHUB -->
+  <h2>5. URL do Projeto no GitHub</h2>
+  <p class="editable">[Inserir a URL do repositório GitHub aqui]</p>
+
+  <!-- 6. TECNOLOGIAS UTILIZADAS -->
+  <h2>6. Tecnologias e Técnicas Utilizadas</h2>
+
+  <h3>HTML</h3>
+  <ul>
+    <li>HTML5 semântico com tags <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> e <code>&lt;footer&gt;</code></li>
+    <li>Formulários com <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code> e validação HTML nativa (<code>required</code>)</li>
+    <li>Hierarquia de cabeçalhos <code>&lt;h1&gt;</code> a <code>&lt;h3&gt;</code></li>
+    <li>Imagens com atributo <code>alt</code> descritivo para acessibilidade</li>
+    <li>Links internos (entre páginas) e externos (com <code>target="_blank"</code> e <code>rel="noopener noreferrer"</code>)</li>
+    <li>Âncoras internas na página de categorias para navegação suave</li>
+    <li>Uso de <code>&lt;time datetime&gt;</code> para datas semânticas nos artigos</li>
+  </ul>
+
+  <h3>CSS</h3>
+  <ul>
+    <li>Arquivo CSS externo único (<code>css/style.css</code>)</li>
+    <li>CSS Grid para layouts de artigos, categorias, ferramentas e equipe</li>
+    <li>Flexbox para header, navegação e componentes menores</li>
+    <li>Tema escuro com paleta consistente (inspirada no GitHub Dark)</li>
+    <li>Media queries para responsividade em 768px e 480px</li>
+    <li>Transições CSS para hover em cards e links</li>
+    <li>Menu hamburger responsivo para mobile (toggle via <code>onclick</code>)</li>
+    <li>Header sticky com <code>position: sticky</code></li>
+  </ul>
+
+  <!-- 7. DIFICULDADES -->
+  <h2>7. Dificuldades Encontradas e Soluções</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Dificuldade</th>
+        <th>Solução</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Manter a consistência visual em 11 páginas diferentes</td>
+        <td>Uso de um único arquivo CSS externo com classes reutilizáveis e paleta de cores definida em todo o site</td>
+      </tr>
+      <tr>
+        <td>Layout responsivo para diferentes tamanhos de tela</td>
+        <td>Uso de CSS Grid com <code>auto-fill</code> e <code>minmax()</code> para grids adaptáveis, complementado por media queries em 768px e 480px</td>
+      </tr>
+      <tr>
+        <td>Menu de navegação funcional em mobile sem JavaScript complexo</td>
+        <td>Implementação de menu toggle com evento <code>onclick</code> inline que alterna classe CSS para mostrar/esconder a navegação</td>
+      </tr>
+      <tr>
+        <td>Garantir que todos os links levassem a conteúdo real</td>
+        <td>Criação de 6 artigos completos individuais e categorias com âncoras internas, eliminando qualquer link vazio</td>
+      </tr>
+      <tr>
+        <td>Formatação rica nos artigos (código, blockquotes, listas)</td>
+        <td>Estilização CSS dedicada para os elementos dentro de <code>.article-body</code> com cores de sintaxe e espaçamento adequado</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 8. DIVISÃO DE TAREFAS -->
+  <h2>8. Divisão de Tarefas</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Integrante</th>
+        <th>Responsabilidades</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Patrick</strong></td>
+        <td>
+          <ul>
+            <li>Estrutura HTML do site (index, sobre, contato)</li>
+            <li>Artigo sobre HTML5 e CSS3 (artigo.html)</li>
+            <li>Artigo sobre React Native vs Flutter (artigo-mobile.html)</li>
+            <li>Design visual e paleta de cores</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Rafael</strong></td>
+        <td>
+          <ul>
+            <li>Página de categorias e ferramentas</li>
+            <li>Artigo sobre IA generativa (artigo-ia.html)</li>
+            <li>Artigo sobre OWASP Top 10 (artigo-seguranca.html)</li>
+            <li>Formulários de contato e newsletter</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Pedro</strong></td>
+        <td>
+          <ul>
+            <li>CSS e responsividade</li>
+            <li>Artigo sobre Docker (artigo-docker.html)</li>
+            <li>Artigo sobre Python para dados (artigo-python.html)</li>
+            <li>Publicação via FTP e testes em dispositivos</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 9. USO DE IA -->
+  <h2>9. Declaração de Uso de IA</h2>
+  <div class="highlight">
+    <p>
+      <strong>Ferramenta utilizada:</strong> GitHub Copilot (assistente de código baseado em IA)
+    </p>
+    <p>
+      <strong>O que foi gerado:</strong> A estrutura inicial das páginas HTML e do arquivo CSS foi gerada com auxílio do GitHub Copilot, incluindo a estrutura semântica, estilização base e layout responsivo.
+    </p>
+    <p>
+      <strong>Como foi adaptado:</strong> Todo o código gerado foi revisado, compreendido e adaptado pelo grupo. Os conteúdos dos artigos foram revisados para garantir precisão técnica. A paleta de cores, escolha das categorias e organização das seções foram definidas pelo grupo. O grupo é capaz de explicar cada parte do código entregue.
+    </p>
+  </div>
+
+  <p style="text-align:center; color:#999; margin-top:3rem; font-size:0.85rem;">
+    — Fim do Relatório —
+  </p>
+
+</body>
+</html>

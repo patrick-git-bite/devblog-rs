@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introdução ao Docker: containers para desenvolvedores — DevBlog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">&#60;/&#62;</span>
+        <a href="index.html">Dev<span>Blog</span></a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.querySelector('.main-nav').classList.toggle('active')">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html" class="active">Artigos</a></li>
+          <li><a href="categorias.html">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article-full">
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="categorias.html#devops">DevOps</a>
+      <span>›</span>
+      Docker
+    </nav>
+
+    <div class="article-header">
+      <span class="article-card-category">DevOps</span>
+      <h1>Introdução ao Docker: containers para desenvolvedores</h1>
+      <div class="article-meta">
+        <span class="author">Por Pedro</span>
+        <time datetime="2025-03-25">25 de Março de 2025</time>
+      </div>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=500&fit=crop" alt="Servidor de dados com cabos de rede e luzes LED" class="article-cover">
+
+    <article class="article-body">
+      <p>Se você já ouviu a frase <em>"na minha máquina funciona"</em>, o Docker é a solução. Containers revolucionaram a forma como desenvolvemos, testamos e implantamos aplicações. Neste guia, vamos entender o que é Docker, por que usá-lo e como começar.</p>
+
+      <h2>O que é Docker?</h2>
+      <p>Docker é uma plataforma de código aberto que permite empacotar aplicações e todas as suas dependências em unidades padronizadas chamadas <strong>containers</strong>. Um container é um ambiente isolado e leve que roda sobre o sistema operacional do host, sem precisar de uma máquina virtual completa.</p>
+
+      <blockquote>
+        "Containers são para aplicações o que contêineres de transporte são para mercadorias — uma forma padronizada de empacotar e transportar qualquer coisa, para qualquer lugar."
+      </blockquote>
+
+      <h3>Docker vs Máquinas Virtuais</h3>
+      <p>Diferente de máquinas virtuais (VMs), que simulam um sistema operacional inteiro, containers compartilham o kernel do host e isolam apenas a aplicação e suas dependências. Isso resulta em:</p>
+
+      <ul>
+        <li><strong>Início mais rápido</strong> — Containers iniciam em segundos, VMs em minutos</li>
+        <li><strong>Menos recursos</strong> — Containers usam muito menos memória e CPU</li>
+        <li><strong>Maior portabilidade</strong> — O mesmo container roda em qualquer lugar com Docker instalado</li>
+        <li><strong>Mais densidade</strong> — É possível rodar dezenas de containers onde caberiam poucas VMs</li>
+      </ul>
+
+      <h2>Conceitos fundamentais</h2>
+
+      <h3>Imagem (Image)</h3>
+      <p>Uma imagem Docker é um template somente leitura que contém tudo necessário para rodar uma aplicação: código, runtime, bibliotecas, variáveis de ambiente e arquivos de configuração. Pense nela como uma "receita" para criar containers.</p>
+
+      <h3>Container</h3>
+      <p>Um container é uma instância em execução de uma imagem. Você pode criar múltiplos containers a partir da mesma imagem, cada um isolado dos demais.</p>
+
+      <h3>Dockerfile</h3>
+      <p>É um arquivo de texto com instruções para construir uma imagem Docker. Cada instrução cria uma "camada" na imagem:</p>
+
+      <pre><code># Exemplo de Dockerfile para uma aplicação Node.js
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]</code></pre>
+
+      <h3>Docker Compose</h3>
+      <p>Ferramenta para definir e gerenciar aplicações com múltiplos containers. Usando um arquivo <code>docker-compose.yml</code>, você define todos os serviços, redes e volumes da aplicação:</p>
+
+      <pre><code># docker-compose.yml
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: meuapp
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: senha123
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:</code></pre>
+
+      <h2>Comandos essenciais</h2>
+      <p>Os comandos mais usados no dia a dia com Docker:</p>
+
+      <pre><code># Baixar uma imagem do Docker Hub
+docker pull node:20
+
+# Listar imagens locais
+docker images
+
+# Criar e rodar um container
+docker run -d -p 3000:3000 --name meu-app minha-imagem
+
+# Listar containers em execução
+docker ps
+
+# Parar um container
+docker stop meu-app
+
+# Ver logs de um container
+docker logs meu-app
+
+# Construir imagem a partir de um Dockerfile
+docker build -t minha-imagem .
+
+# Docker Compose - subir todos os serviços
+docker compose up -d
+
+# Docker Compose - derrubar tudo
+docker compose down</code></pre>
+
+      <h2>Por que usar Docker no desenvolvimento?</h2>
+      <ol>
+        <li><strong>Ambiente consistente</strong> — Todos os desenvolvedores da equipe trabalham no mesmo ambiente, eliminando o "funciona na minha máquina"</li>
+        <li><strong>Onboarding rápido</strong> — Novos membros da equipe rodam um <code>docker compose up</code> e já estão prontos</li>
+        <li><strong>Isolamento</strong> — Cada projeto pode ter suas próprias versões de Node, Python, banco de dados, etc.</li>
+        <li><strong>Testes reproduzíveis</strong> — Ambientes de teste idênticos ao de produção</li>
+        <li><strong>CI/CD simplificado</strong> — Pipelines de integração contínua ficam mais simples e confiáveis</li>
+      </ol>
+
+      <h2>Docker na prática: exemplo completo</h2>
+      <p>Vamos criar uma aplicação web simples com Node.js e PostgreSQL usando Docker Compose. A estrutura do projeto seria:</p>
+
+      <pre><code>meu-projeto/
+├── docker-compose.yml
+├── Dockerfile
+├── package.json
+├── server.js
+└── .dockerignore</code></pre>
+
+      <p>O arquivo <code>.dockerignore</code> funciona como o <code>.gitignore</code>, evitando que arquivos desnecessários sejam copiados para a imagem:</p>
+
+      <pre><code>node_modules
+npm-debug.log
+.git
+.env</code></pre>
+
+      <h2>Docker Hub e registro de imagens</h2>
+      <p>O <a href="https://hub.docker.com/" target="_blank" rel="noopener noreferrer">Docker Hub</a> é o registro público padrão, com milhares de imagens oficiais prontas para uso: Node.js, Python, PostgreSQL, Redis, Nginx e muito mais. Você também pode publicar suas próprias imagens.</p>
+
+      <h2>Conclusão</h2>
+      <p>Docker é uma ferramenta essencial no arsenal de todo desenvolvedor moderno. Ele simplifica ambientes de desenvolvimento, torna deploys mais confiáveis e facilita a colaboração em equipe. Se você ainda não usa Docker, comece com um projeto pequeno e vá explorando — os benefícios são enormes.</p>
+
+      <p>Explore mais artigos sobre DevOps na nossa <a href="categorias.html#devops">seção dedicada</a>!</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>&#60;/&#62; DevBlog</h3>
+        <p>Um blog criado por estudantes apaixonados por tecnologia e programação. Compartilhamos conhecimento sobre desenvolvimento web, mobile, IA e muito mais.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html">Artigos</a></li>
+          <li><a href="categorias.html">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Redes Sociais</h3>
+        <div class="social-icons">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">IN</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">TW</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DevBlog — Patrick, Rafael e Pedro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
