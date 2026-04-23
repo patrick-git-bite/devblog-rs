@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Native vs Flutter: qual escolher em 2025? — DevBlog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">&#60;/&#62;</span>
+        <a href="index.html">Dev<span>Blog</span></a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.querySelector('.main-nav').classList.toggle('active')">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html" class="active">Artigos</a></li>
+          <li><a href="categorias.html">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article-full">
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="categorias.html#mobile">Mobile</a>
+      <span>›</span>
+      React Native vs Flutter
+    </nav>
+
+    <div class="article-header">
+      <span class="article-card-category">Mobile</span>
+      <h1>React Native vs Flutter: qual escolher em 2025?</h1>
+      <div class="article-meta">
+        <span class="author">Por Patrick</span>
+        <time datetime="2025-03-20">20 de Março de 2025</time>
+      </div>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=1200&h=500&fit=crop" alt="Smartphone exibindo aplicativo mobile em desenvolvimento" class="article-cover">
+
+    <article class="article-body">
+      <p>Desenvolver aplicativos móveis multiplataforma nunca foi tão acessível. Dois frameworks dominam esse cenário: o <strong>React Native</strong>, do Facebook (Meta), e o <strong>Flutter</strong>, do Google. Mas qual deles é a melhor escolha em 2025? Neste comparativo detalhado, analisamos os dois em vários critérios para te ajudar a decidir.</p>
+
+      <h2>O que é React Native?</h2>
+      <p>React Native é um framework de código aberto criado pela Meta (Facebook) em 2015. Ele permite criar aplicativos nativos para iOS e Android usando <strong>JavaScript</strong> e <strong>React</strong>. A ideia é: "aprenda uma vez, escreva para qualquer plataforma".</p>
+
+      <p>Grandes empresas usam React Native em produção: Facebook, Instagram, Airbnb (já migrou), Discord, Pinterest e Shopify.</p>
+
+      <h2>O que é Flutter?</h2>
+      <p>Flutter é um toolkit de UI do Google, lançado em 2018, que usa a linguagem <strong>Dart</strong>. Ele compila diretamente para código nativo ARM, gerando apps de alta performance. O Flutter se destaca pela sua abordagem de renderização própria — ele não usa os componentes nativos da plataforma, mas desenha cada pixel na tela.</p>
+
+      <p>Empresas que usam Flutter: Google Ads, Alibaba, BMW, Nubank, Toyota e eBay.</p>
+
+      <h2>Comparativo detalhado</h2>
+
+      <h3>1. Linguagem de programação</h3>
+      <ul>
+        <li><strong>React Native</strong> — JavaScript/TypeScript. Grande vantagem para quem já é desenvolvedor web, pois a curva de aprendizado é mínima</li>
+        <li><strong>Flutter</strong> — Dart. Linguagem menos conhecida, mas fortemente tipada e otimizada para UI. A curva de aprendizado é um pouco maior, mas Dart é elegante e produtivo</li>
+      </ul>
+
+      <h3>2. Performance</h3>
+      <ul>
+        <li><strong>React Native</strong> — Usa uma "bridge" (ponte) para comunicação entre o código JS e os componentes nativos. A nova arquitetura (Fabric + TurboModules) melhora significativamente isso</li>
+        <li><strong>Flutter</strong> — Compila diretamente para código nativo ARM, sem bridge. Geralmente apresenta performance ligeiramente superior em animações complexas</li>
+      </ul>
+
+      <h3>3. Interface do usuário</h3>
+      <ul>
+        <li><strong>React Native</strong> — Usa componentes nativos da plataforma, então o app tem o "look and feel" nativo de cada sistema operacional</li>
+        <li><strong>Flutter</strong> — Renderiza seus próprios widgets (Material Design e Cupertino). Isso garante consistência visual entre plataformas, mas pode parecer "menos nativo"</li>
+      </ul>
+
+      <h3>4. Ecossistema e comunidade</h3>
+      <ul>
+        <li><strong>React Native</strong> — Comunidade madura e enorme. Ecossistema npm gigantesco. Muitas bibliotecas de terceiros disponíveis</li>
+        <li><strong>Flutter</strong> — Comunidade crescendo rapidamente. O <a href="https://pub.dev" target="_blank" rel="noopener noreferrer">pub.dev</a> tem milhares de pacotes, mas nem todos no nível de maturidade do npm</li>
+      </ul>
+
+      <h3>5. Experiência de desenvolvimento</h3>
+      <p>Ambos os frameworks oferecem <strong>Hot Reload</strong>, que permite ver mudanças no código instantaneamente sem perder o estado do app. Isso acelera dramaticamente o desenvolvimento.</p>
+
+      <pre><code>// React Native - Componente simples
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+export default function App() {
+  return (
+    &lt;View style={styles.container}&gt;
+      &lt;Text style={styles.title}&gt;Olá, React Native!&lt;/Text&gt;
+    &lt;/View&gt;
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  title: { fontSize: 24, fontWeight: 'bold' }
+});</code></pre>
+
+      <pre><code>// Flutter - Componente equivalente em Dart
+import 'package:flutter/material.dart';
+
+void main() =&gt; runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text(
+            'Olá, Flutter!',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+    );
+  }
+}</code></pre>
+
+      <h2>Quando escolher React Native?</h2>
+      <ol>
+        <li>Sua equipe já domina JavaScript/TypeScript e React</li>
+        <li>Você precisa de integração profunda com o ecossistema web (compartilhar código entre web e mobile)</li>
+        <li>O app precisa ter aparência 100% nativa em cada plataforma</li>
+        <li>Você quer aproveitar o enorme ecossistema npm</li>
+      </ol>
+
+      <h2>Quando escolher Flutter?</h2>
+      <ol>
+        <li>Performance de animações e gráficos é prioridade</li>
+        <li>Você quer UI consistente e pixel-perfect em todas as plataformas</li>
+        <li>O projeto é novo e a equipe está aberta a aprender Dart</li>
+        <li>Você planeja expandir para web e desktop com o mesmo codebase</li>
+      </ol>
+
+      <h2>Mercado de trabalho em 2025</h2>
+      <p>Ambos os frameworks têm demanda forte no mercado brasileiro e internacional. React Native ainda lidera em número de vagas no Brasil, devido à popularidade do JavaScript. Porém, Flutter vem crescendo rapidamente, especialmente em startups e fintechs (como o Nubank).</p>
+
+      <h2>Conclusão</h2>
+      <p>Não existe um vencedor absoluto — a melhor escolha depende do contexto do projeto, das habilidades da equipe e dos requisitos de performance e design. Ambos são excelentes frameworks, ativamente mantidos por grandes empresas de tecnologia.</p>
+
+      <p>O conselho para quem está começando: <strong>aprenda os fundamentos de desenvolvimento mobile</strong> (ciclo de vida, navegação, estado) — eles são transferíveis entre frameworks. Depois, escolha o que fizer mais sentido para seus projetos.</p>
+
+      <p>Confira mais artigos sobre desenvolvimento mobile na nossa <a href="categorias.html#mobile">seção Mobile</a>!</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>&#60;/&#62; DevBlog</h3>
+        <p>Um blog criado por estudantes apaixonados por tecnologia e programação. Compartilhamos conhecimento sobre desenvolvimento web, mobile, IA e muito mais.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html">Artigos</a></li>
+          <li><a href="categorias.html">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Redes Sociais</h3>
+        <div class="social-icons">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">IN</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">TW</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DevBlog — Patrick, Rafael e Pedro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
