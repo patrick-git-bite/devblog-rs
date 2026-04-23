@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python para análise de dados: primeiros passos — DevBlog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">&#60;/&#62;</span>
+        <a href="index.html">Dev<span>Blog</span></a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.querySelector('.main-nav').classList.toggle('active')">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html" class="active">Artigos</a></li>
+          <li><a href="categorias.html">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article-full">
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="categorias.html#data">Data Science</a>
+      <span>›</span>
+      Python para Análise de Dados
+    </nav>
+
+    <div class="article-header">
+      <span class="article-card-category">Data Science</span>
+      <h1>Python para análise de dados: primeiros passos</h1>
+      <div class="article-meta">
+        <span class="author">Por Pedro</span>
+        <time datetime="2025-03-10">10 de Março de 2025</time>
+      </div>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=500&fit=crop" alt="Dashboard com gráficos e análise de dados em tela de computador" class="article-cover">
+
+    <article class="article-body">
+      <p>Python é a linguagem número um para análise de dados e ciência de dados. Sua sintaxe simples, comunidade ativa e bibliotecas poderosas como Pandas, NumPy e Matplotlib tornam Python a escolha ideal tanto para iniciantes quanto para profissionais. Neste artigo, vamos dar os primeiros passos na análise de dados com Python.</p>
+
+      <h2>Por que Python para dados?</h2>
+      <p>Existem várias linguagens usadas em análise de dados (R, Julia, SQL), mas Python se destaca por diversos motivos:</p>
+      <ul>
+        <li><strong>Versatilidade</strong> — Além de dados, Python serve para web, automação, IA e muito mais</li>
+        <li><strong>Ecossistema rico</strong> — Bibliotecas maduras e bem documentadas para cada etapa do processo</li>
+        <li><strong>Comunidade imensa</strong> — Milhares de tutoriais, cursos e fóruns de apoio</li>
+        <li><strong>Mercado de trabalho</strong> — Uma das linguagens mais demandadas para vagas de dados no Brasil e no mundo</li>
+        <li><strong>Jupyter Notebooks</strong> — Ambiente interativo perfeito para exploração e apresentação de dados</li>
+      </ul>
+
+      <h2>As bibliotecas essenciais</h2>
+
+      <h3>NumPy — Computação numérica</h3>
+      <p>NumPy é a base de todo o ecossistema científico do Python. Fornece arrays multidimensionais eficientes e funções matemáticas otimizadas.</p>
+
+      <pre><code>import numpy as np
+
+# Criando arrays
+dados = np.array([10, 20, 30, 40, 50])
+
+# Operações vetorizadas (muito mais rápido que loops)
+print(dados.mean())   # Média: 30.0
+print(dados.std())    # Desvio padrão: 14.14
+print(dados * 2)      # [20, 40, 60, 80, 100]
+
+# Matriz 2D
+matriz = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(matriz.shape)   # (3, 3)</code></pre>
+
+      <h3>Pandas — Manipulação de dados</h3>
+      <p>Pandas é a ferramenta principal para trabalhar com dados tabulares. Sua estrutura fundamental é o <strong>DataFrame</strong>, que é como uma planilha poderosa dentro do Python.</p>
+
+      <pre><code>import pandas as pd
+
+# Lendo um arquivo CSV
+df = pd.read_csv('vendas.csv')
+
+# Visualizando os dados
+print(df.head())          # Primeiras 5 linhas
+print(df.info())          # Tipos de dados e valores nulos
+print(df.describe())      # Estatísticas descritivas
+
+# Filtrando dados
+vendas_altas = df[df['valor'] &gt; 1000]
+
+# Agrupando e agregando
+por_categoria = df.groupby('categoria')['valor'].sum()
+print(por_categoria)
+
+# Tratando valores nulos
+df['coluna'].fillna(0, inplace=True)
+
+# Criando novas colunas
+df['lucro'] = df['receita'] - df['custo']</code></pre>
+
+      <h3>Matplotlib — Visualização de dados</h3>
+      <p>Matplotlib é a biblioteca clássica de visualização em Python. Permite criar gráficos estáticos, interativos e animados.</p>
+
+      <pre><code>import matplotlib.pyplot as plt
+
+# Gráfico de linha
+meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']
+vendas = [120, 135, 148, 162, 155, 178]
+
+plt.figure(figsize=(10, 6))
+plt.plot(meses, vendas, marker='o', color='#58a6ff', linewidth=2)
+plt.title('Vendas Mensais - 2025')
+plt.xlabel('Mês')
+plt.ylabel('Vendas (unidades)')
+plt.grid(True, alpha=0.3)
+plt.savefig('grafico_vendas.png')
+plt.show()</code></pre>
+
+      <h3>Seaborn — Visualizações estatísticas</h3>
+      <p>Seaborn é construído sobre o Matplotlib e oferece gráficos estatísticos belos com poucas linhas de código:</p>
+
+      <pre><code>import seaborn as sns
+
+# Gráfico de distribuição
+sns.histplot(data=df, x='idade', bins=20, kde=True)
+
+# Mapa de calor de correlações
+correlacao = df.corr()
+sns.heatmap(correlacao, annot=True, cmap='coolwarm')
+
+# Gráfico de dispersão com regressão
+sns.regplot(data=df, x='horas_estudo', y='nota')</code></pre>
+
+      <h2>Fluxo de trabalho em análise de dados</h2>
+      <p>Todo projeto de análise de dados segue um fluxo similar:</p>
+
+      <ol>
+        <li><strong>Definição do problema</strong> — Qual pergunta queremos responder com os dados?</li>
+        <li><strong>Coleta de dados</strong> — Obter dados de APIs, bancos de dados, CSVs ou web scraping</li>
+        <li><strong>Limpeza e preparação</strong> — Tratar valores nulos, duplicatas, tipos incorretos e outliers</li>
+        <li><strong>Análise exploratória (EDA)</strong> — Entender a distribuição, correlações e padrões nos dados</li>
+        <li><strong>Visualização</strong> — Criar gráficos que comunicam os insights de forma clara</li>
+        <li><strong>Conclusão e comunicação</strong> — Apresentar os resultados de forma compreensível para stakeholders</li>
+      </ol>
+
+      <h2>Exemplo prático: analisando dados de vendas</h2>
+      <p>Vamos simular uma análise completa com dados de vendas fictícios:</p>
+
+      <pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+# Criando dataset fictício
+dados = {
+    'produto': ['Notebook', 'Mouse', 'Teclado', 'Monitor', 'Headset'] * 12,
+    'mes': sorted(['Jan','Fev','Mar','Abr','Mai','Jun',
+                    'Jul','Ago','Set','Out','Nov','Dez'] * 5),
+    'quantidade': [45, 120, 89, 32, 67, 52, 135, 95, 28, 73,
+                   48, 110, 92, 35, 71, 55, 128, 88, 30, 69,
+                   50, 142, 97, 38, 75, 43, 118, 82, 26, 65,
+                   58, 155, 103, 41, 80, 47, 130, 90, 33, 72,
+                   53, 145, 98, 36, 77, 49, 138, 93, 29, 70,
+                   56, 150, 100, 39, 78, 44, 125, 86, 31, 68],
+    'valor_unit': [3500, 80, 250, 1800, 350] * 12
+}
+
+df = pd.DataFrame(dados)
+df['receita'] = df['quantidade'] * df['valor_unit']
+
+# Receita total por produto
+receita_produto = df.groupby('produto')['receita'].sum().sort_values()
+
+plt.figure(figsize=(10, 6))
+receita_produto.plot(kind='barh', color='#58a6ff')
+plt.title('Receita Total por Produto - 2025')
+plt.xlabel('Receita (R$)')
+plt.tight_layout()
+plt.show()</code></pre>
+
+      <h2>Onde aprender mais</h2>
+      <ul>
+        <li><a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener noreferrer">Documentação oficial do Pandas</a></li>
+        <li><a href="https://www.kaggle.com/learn" target="_blank" rel="noopener noreferrer">Kaggle Learn</a> — Cursos gratuitos com exercícios práticos</li>
+        <li><a href="https://www.freecodecamp.org/learn/data-analysis-with-python/" target="_blank" rel="noopener noreferrer">freeCodeCamp — Data Analysis with Python</a></li>
+        <li><a href="https://jupyter.org/" target="_blank" rel="noopener noreferrer">Jupyter Notebook</a> — Ambiente interativo para análise</li>
+      </ul>
+
+      <h2>Conclusão</h2>
+      <p>Python é a porta de entrada perfeita para o mundo da análise de dados. Com Pandas, NumPy e Matplotlib, você tem tudo que precisa para começar a explorar datasets, encontrar padrões e contar histórias com dados. O próximo passo? Pegue um dataset real no <a href="https://www.kaggle.com/datasets" target="_blank" rel="noopener noreferrer">Kaggle</a> e pratique!</p>
+
+      <p>Veja mais artigos sobre Data Science na nossa <a href="categorias.html#data">seção dedicada</a>!</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>&#60;/&#62; DevBlog</h3>
+        <p>Um blog criado por estudantes apaixonados por tecnologia e programação. Compartilhamos conhecimento sobre desenvolvimento web, mobile, IA e muito mais.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artigo.html">Artigos</a></li>
+          <li><a href="categorias.html">Categorias</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Redes Sociais</h3>
+        <div class="social-icons">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">IN</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">TW</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DevBlog — Patrick, Rafael e Pedro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

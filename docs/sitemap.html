@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa do Site — DevBlog</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 3rem;
+      font-size: 0.95rem;
+    }
+    .sitemap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Nível 0 — Home */
+    .level-0 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .node {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 2px solid;
+    }
+    .node-home {
+      background: #1f6feb;
+      color: #fff;
+      border-color: #1a5cc7;
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+    }
+
+    /* Conector vertical */
+    .connector {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #999;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Nível 1 — Páginas principais */
+    .level-1 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .level-1-item {
+      text-align: center;
+    }
+    .node-page {
+      background: #e8f0fe;
+      color: #1a5cc7;
+      border-color: #1f6feb;
+      width: 100%;
+    }
+
+    /* Nível 2 — Sub-páginas */
+    .level-2-group {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+    .level-2-title {
+      font-weight: 600;
+      color: #1f6feb;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .level-2-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .node-sub {
+      background: #f0f7ff;
+      color: #333;
+      border-color: #a8c8f0;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+      font-weight: 500;
+    }
+    .node-form {
+      background: #e8fce8;
+      color: #1a6b1a;
+      border-color: #2ea043;
+    }
+    .node-external {
+      background: #fff3e0;
+      color: #b36b00;
+      border-color: #e09000;
+    }
+
+    /* Legenda */
+    .legend {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+    .legend h3 {
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+    .legend-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 2px solid;
+    }
+
+    /* Arrow lines */
+    .arrows {
+      text-align: center;
+      color: #bbb;
+      margin: 0.5rem 0;
+      font-size: 0.8rem;
+      letter-spacing: 2rem;
+    }
+
+    /* Info */
+    .info {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+    }
+
+    @media print {
+      body { padding: 1rem; }
+      .legend { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mapa do Site — DevBlog</h1>
+  <p class="subtitle">Blog de Tecnologia e Programação — Patrick, Rafael e Pedro</p>
+
+  <div class="sitemap">
+
+    <!-- HOME -->
+    <div class="level-0">
+      <span class="node node-home">🏠 index.html — Home</span>
+    </div>
+
+    <div class="connector">│</div>
+    <div class="arrows">↙ ↓ ↘</div>
+
+    <!-- NÍVEL 1 — PÁGINAS PRINCIPAIS -->
+    <div class="level-1">
+      <div class="level-1-item">
+        <span class="node node-page">📝 artigo.html<br>Artigos</span>
+      </div>
+      <div class="level-1-item">
+        <span class="node node-page">📂 categorias.html<br>Categorias</span>
+      </div>
+      <div class="level-1-item">
+        <span class="node node-page">🔧 ferramentas.html<br>Ferramentas</span>
+      </div>
+    </div>
+
+    <div class="level-1" style="grid-template-columns: repeat(2, 1fr); max-width: 600px; margin: 0 auto 2rem;">
+      <div class="level-1-item">
+        <span class="node node-page">👥 sobre.html<br>Sobre o Blog</span>
+      </div>
+      <div class="level-1-item">
+        <span class="node node-page">✉️ contato.html<br>Newsletter / Contato</span>
+      </div>
+    </div>
+
+    <div class="connector">│</div>
+
+    <!-- NÍVEL 2 — SUB-PÁGINAS DE ARTIGOS -->
+    <div class="level-2-group">
+      <div class="level-2-title">📝 Artigos Individuais (acessíveis via Home, Categorias e Artigos)</div>
+      <div class="level-2-items">
+        <span class="node node-sub">artigo.html — HTML5 e CSS3</span>
+        <span class="node node-sub">artigo-ia.html — IA Generativa</span>
+        <span class="node node-sub">artigo-docker.html — Docker</span>
+        <span class="node node-sub">artigo-mobile.html — React Native vs Flutter</span>
+        <span class="node node-sub">artigo-seguranca.html — OWASP Top 10</span>
+        <span class="node node-sub">artigo-python.html — Python para Dados</span>
+      </div>
+    </div>
+
+    <!-- NÍVEL 2 — CATEGORIAS (âncoras) -->
+    <div class="level-2-group">
+      <div class="level-2-title">📂 Seções de Categorias (âncoras dentro de categorias.html)</div>
+      <div class="level-2-items">
+        <span class="node node-sub">#web — Desenvolvimento Web</span>
+        <span class="node node-sub">#mobile — Mobile</span>
+        <span class="node node-sub">#ia — Inteligência Artificial</span>
+        <span class="node node-sub">#seguranca — Segurança</span>
+        <span class="node node-sub">#devops — DevOps</span>
+        <span class="node node-sub">#data — Data Science</span>
+      </div>
+    </div>
+
+    <!-- FORMULÁRIOS -->
+    <div class="level-2-group">
+      <div class="level-2-title">📋 Formulários (dentro de contato.html)</div>
+      <div class="level-2-items">
+        <span class="node node-form">Formulário de Newsletter</span>
+        <span class="node node-form">Formulário de Contato</span>
+      </div>
+    </div>
+
+    <!-- LINKS EXTERNOS -->
+    <div class="level-2-group">
+      <div class="level-2-title">🔗 Links Externos (presentes em artigos e ferramentas)</div>
+      <div class="level-2-items">
+        <span class="node node-external">GitHub</span>
+        <span class="node node-external">LinkedIn</span>
+        <span class="node node-external">W3C Validator</span>
+        <span class="node node-external">MDN Web Docs</span>
+        <span class="node node-external">freeCodeCamp</span>
+        <span class="node node-external">Stack Overflow</span>
+        <span class="node node-external">Docker Hub</span>
+        <span class="node node-external">OWASP</span>
+        <span class="node node-external">Kaggle</span>
+      </div>
+    </div>
+
+    <!-- LEGENDA -->
+    <div class="legend">
+      <h3>Legenda</h3>
+      <div class="legend-items">
+        <div class="legend-item">
+          <div class="legend-color" style="background: #1f6feb; border-color: #1a5cc7;"></div>
+          Página inicial (Home)
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #e8f0fe; border-color: #1f6feb;"></div>
+          Páginas principais (nav)
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #f0f7ff; border-color: #a8c8f0;"></div>
+          Sub-páginas / Seções
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #e8fce8; border-color: #2ea043;"></div>
+          Formulários
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #fff3e0; border-color: #e09000;"></div>
+          Links externos
+        </div>
+      </div>
+    </div>
+
+    <p class="info">
+      Todas as páginas possuem menu de navegação no header e links no footer.<br>
+      O menu permite acesso direto a qualquer página principal a partir de qualquer página do site.
+    </p>
+
+  </div>
+
+</body>
+</html>
