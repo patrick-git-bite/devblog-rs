@@ -1,0 +1,14 @@
+# Dependências e ambiente
+node_modules/
+.env
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema
+*.log
