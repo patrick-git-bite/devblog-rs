@@ -1,4 +1,12 @@
+/* 
+Este CSS é um arquivo de estilos para um blog temático (inspirado no GitHub Dark), focado em design responsivo e acessibilidade.
+Pontos importantes gerais: Cores principais (fundo escuro #0d1117, texto claro #f0f6fc, azul #58a6ff); grids responsivos; transições suaves (0.3s); bordas arredondadas; hover com elevação/borda azul.
+Estrutura: Reset/base, header/navegação, hero, conteúdo (grids de artigos/categorias), seções (ferramentas/sobre/formulários), footer, responsividade.
+*/
+
 /* ===== RESET E BASE ===== */
+/* Este CSS é um arquivo de estilos para um blog temático (inspirado no GitHub Dark), focado em design responsivo e acessibilidade.
+Pontos importantes: Reset com box-sizing para incluir padding/bordas no tamanho total; fonte padrão Segoe UI; fundo escuro (#0d1117) e texto claro (#e0e0e0); links com transição suave ao hover; imagens responsivas. */
 * {
   margin: 0;
   padding: 0;
@@ -37,6 +45,7 @@ ul {
 }
 
 /* ===== HEADER ===== */
+/* Header fixo (sticky) com fundo escuro (#161b22); logo com ícone e texto destacado em azul (#58a6ff); navegação horizontal com efeitos de underline ao hover; menu mobile oculto por padrão. */
 .site-header {
   background-color: #161b22;
   border-bottom: 1px solid #30363d;
@@ -75,6 +84,7 @@ ul {
 }
 
 /* ===== NAVEGAÇÃO ===== */
+/* Navegação horizontal com efeitos de underline ao hover; menu mobile oculto por padrão, ativado via JavaScript. */
 .main-nav ul {
   display: flex;
   gap: 1.5rem;
@@ -121,6 +131,7 @@ ul {
 }
 
 /* ===== HERO / BANNER ===== */
+/* Gradiente de fundo escuro para destaque; título grande com parte azul, subtítulo e tags estilizadas; centralizado e responsivo. */
 .hero {
   background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%);
   padding: 5rem 2rem;
@@ -162,6 +173,7 @@ ul {
 }
 
 /* ===== CONTEÚDO PRINCIPAL ===== */
+/* Layout em grid para artigos (auto-fill, mínimo 340px), com cards hoveráveis (elevação e borda azul); página de artigo completo com header, capa e corpo formatado. */
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -178,6 +190,7 @@ ul {
 }
 
 /* ===== GRID DE ARTIGOS ===== */
+/* Grid responsivo para cards de artigo com imagem, categoria, título, resumo e meta (autor/data); hover com elevação. */
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -255,6 +268,7 @@ ul {
 }
 
 /* ===== PÁGINA DE ARTIGO COMPLETO ===== */
+/* Página com header, capa (altura 400px), corpo com headings, listas, código (fundo escuro), blockquotes e preformatado. */
 .article-full {
   max-width: 800px;
   margin: 0 auto;
@@ -364,6 +378,7 @@ ul {
 }
 
 /* ===== CATEGORIAS ===== */
+/* Grid de cards com ícones, títulos e contadores; hover com elevação e borda azul. */
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -432,6 +447,7 @@ a.category-card:hover {
 }
 
 /* ===== FERRAMENTAS ===== */
+/* Grid de cards flexíveis com ícones, descrições e tags; hover com borda azul. */
 .tools-section {
   margin-bottom: 3rem;
 }
@@ -499,6 +515,7 @@ a.category-card:hover {
 }
 
 /* ===== SOBRE ===== */
+/* Intro centralizada; grid de equipe com avatares, roles e links sociais; hover com borda azul. */
 .about-intro {
   background-color: #161b22;
   border: 1px solid #30363d;
@@ -623,6 +640,7 @@ a.category-card:hover {
 }
 
 /* ===== FORMULÁRIOS ===== */
+/* Estilos para inputs, textarea e botões (verde/azul); foco com borda azul e sombra; grid para linhas duplas. */
 .form-section {
   background-color: #161b22;
   border: 1px solid #30363d;
@@ -769,6 +787,7 @@ a.category-card:hover {
 }
 
 /* ===== FOOTER ===== */
+/* Três colunas (sobre, links, social); ícones sociais com hover; bottom com copyright. */
 .site-footer {
   background-color: #161b22;
   border-top: 1px solid #30363d;
@@ -885,6 +904,7 @@ a.category-card:hover {
 }
 
 /* ===== RESPONSIVIDADE ===== */
+/* Breakpoints: 768px (tablet) e 480px (mobile); grids 1 coluna; menu mobile vertical; tamanhos ajustados. */
 @media (max-width: 768px) {
   /* Header mobile */
   .header-container {
