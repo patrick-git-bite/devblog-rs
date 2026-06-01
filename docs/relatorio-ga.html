@@ -93,20 +93,40 @@
   <!-- Seções do relatório: capa, descrição do tema, mapa do site, descrição das páginas, URLs, tecnologias, dificuldades, divisão de tarefas, uso de IA, conclusão. -->
   <div class="cover">
     <h1>Relatório de Entrega 1 (GA)</h1>
-    <h2>Disciplina de Programação Web</h2>
+    <h2>Programação Web</h2>
     <div class="info">
-      <strong>Tema:</strong> Blog de Tecnologia e Programação<br>
+      <strong>Disciplina:</strong> Programação Web<br>
+      <strong>Professor:</strong> Prof. Juliano Paulo Menzen<br>
+      <strong>Semestre:</strong> 2026/1<br>
+      <strong>Instituição:</strong> Uniftec<br>
       <strong>Nome do projeto:</strong> DevBlog<br><br>
       <strong>Integrantes:</strong><br>
-      Patrick Brando <span class="editable"></span><br>
-      Rafael Lima <span class="editable"></span><br>
-      Pedro Pereira <span class="editable"></span><br><br>
-      <strong>Data de entrega:</strong> 07 de Maio de 2026
+      Patrick Brando — <span class="editable">053471</span><br>
+      Rafael Lima — <span class="editable">056722</span><br>
+      Pedro Pereira — <span class="editable">064343</span><br><br>
+      <strong>Data de entrega:</strong> 07 de Maio de 2026<br>
+      <strong>Data de geração:</strong> 31 de Maio de 2026
     </div>
   </div>
 
+  <nav id="toc" aria-label="Sumário">
+    <h3>Sumário</h3>
+    <ol>
+      <li><a href="#sec1-descricao">1. Descrição do Tema Escolhido</a></li>
+      <li><a href="#sec2-mapa">2. Mapa do Site</a></li>
+      <li><a href="#sec3-descricao">3. Descrição das Páginas Criadas</a></li>
+      <li><a href="#sec4-url">4. URL do Site Publicado</a></li>
+      <li><a href="#sec5-github">5. URL do Projeto no GitHub</a></li>
+      <li><a href="#sec6-tecnologias">6. Tecnologias e Técnicas Utilizadas</a></li>
+      <li><a href="#sec-compat">Tabela de Compatibilidade</a></li>
+      <li><a href="#sec7-dificuldades">7. Dificuldades Encontradas e Soluções</a></li>
+      <li><a href="#sec8-divisao">8. Divisão de Tarefas</a></li>
+      <li><a href="#sec9-ia">9. Declaração de Uso de IA</a></li>
+    </ol>
+  </nav>
+
   <!-- 1. DESCRIÇÃO DO TEMA -->
-  <h2>1. Descrição do Tema Escolhido</h2>
+  <h2 id="sec1-descricao">1. Descrição do Tema Escolhido</h2>
   <p>
     O tema escolhido foi o <strong>Blog de Tecnologia e Programação</strong> (Tema 5). O DevBlog é um blog técnico voltado para estudantes e desenvolvedores, com artigos sobre desenvolvimento web, mobile, inteligência artificial, segurança, DevOps e ciência de dados.
   </p>
@@ -115,35 +135,22 @@
   </p>
 
   <!-- 2. MAPA DO SITE -->
-  <h2>2. Mapa do Site</h2>
+  <h2 id="sec2-mapa">2. Mapa do Site</h2>
   <p>
     O mapa do site completo está disponível no arquivo <strong>docs/sitemap.html</strong>, que pode ser aberto no navegador e impresso/salvo como PDF. Abaixo, uma visão resumida da estrutura hierárquica:
   </p>
 
-  <pre style="background:#f0f4f8; padding:1rem; border-radius:6px; font-size:0.85rem; line-height:1.6; overflow-x:auto;">
-🏠 Home (index.html)
-├── 📝 Artigos (artigo.html) — Artigo sobre HTML5/CSS3
-│   ├── artigo-ia.html — IA Generativa
-│   ├── artigo-docker.html — Docker
-│   ├── artigo-mobile.html — React Native vs Flutter
-│   ├── artigo-seguranca.html — OWASP Top 10
-│   └── artigo-python.html — Python para Dados
-├── 📂 Categorias (categorias.html)
-│   ├── #web — Desenvolvimento Web
-│   ├── #mobile — Mobile
-│   ├── #ia — Inteligência Artificial
-│   ├── #seguranca — Segurança
-│   ├── #devops — DevOps
-│   └── #data — Data Science
-├── 🔧 Ferramentas (ferramentas.html)
-├── 👥 Sobre (sobre.html)
-└── ✉️ Contato (contato.html)
-    ├── Formulário de Newsletter
-    └── Formulário de Contato
-  </pre>
+  <div class="highlight">
+    <strong>Dica:</strong> Abra o arquivo <code>docs/sitemap.html</code> no navegador, use Ctrl+P e salve como PDF para incorporar no relatório final.
+  </div>
+
+  <figure style="margin: 1rem 0;">
+    <img id="sitemap-image" src="images/sitemap.png" alt="Mapa do Site — DevBlog" style="max-width:100%; border:1px solid #d0d7de; border-radius:6px;" />
+    <figcaption style="font-size:0.9rem; color:#666; margin-top:0.5rem;">Figura: Mapa hierárquico do site DevBlog.</figcaption>
+  </figure>
 
   <!-- 3. DESCRIÇÃO DAS PÁGINAS -->
-  <h2>3. Descrição das Páginas Criadas</h2>
+  <h2 id="sec3-descricao">3. Descrição das Páginas Criadas</h2>
 
   <table>
     <!-- Tabela com descrição das páginas: arquivo, finalidade. Lista todas as 11 páginas criadas. -->
@@ -214,15 +221,15 @@
   </table>
 
   <!-- 4. URL DO SITE -->
-  <h2>4. URL do Site Publicado</h2>
-  <p class="editable">[http://grupo5.neurosky.com.br]</p>
+  <h2 id="sec4-url">4. URL do Site Publicado</h2>
+  <p><a href="http://grupo5.neurosky.com.br" target="_blank">http://grupo5.neurosky.com.br</a></p>
 
   <!-- 5. URL DO GITHUB -->
-  <h2>5. URL do Projeto no GitHub</h2>
-  <p class="editable">[https://github.com/patrick-git-bite/devblog-rs]</p>
+  <h2 id="sec5-github">5. URL do Projeto no GitHub</h2>
+  <p><a href="https://github.com/patrick-git-bite/devblog-rs" target="_blank">https://github.com/patrick-git-bite/devblog-rs</a></p>
 
   <!-- 6. TECNOLOGIAS UTILIZADAS -->
-  <h2>6. Tecnologias e Técnicas Utilizadas</h2>
+  <h2 id="sec6-tecnologias">6. Tecnologias e Técnicas Utilizadas</h2>
 
   <h3>HTML</h3>
   <ul>
@@ -247,8 +254,35 @@
     <li>Header sticky com <code>position: sticky</code></li>
   </ul>
 
+  <!-- TABELA DE COMPATIBILIDADE -->
+  <h2 id="sec-compat">Tabela de Compatibilidade (Browsers × Plataforma)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Plataforma</th>
+        <th>Chrome</th>
+        <th>Firefox</th>
+        <th>Safari</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Desktop</td>
+        <td>✅ OK</td>
+        <td>✅ OK</td>
+        <td>✅ OK</td>
+      </tr>
+      <tr>
+        <td>Mobile</td>
+        <td>✅ OK</td>
+        <td>✅ OK</td>
+        <td>✅ OK</td>
+      </tr>
+    </tbody>
+  </table>
+
   <!-- 7. DIFICULDADES -->
-  <h2>7. Dificuldades Encontradas e Soluções</h2>
+  <h2 id="sec7-dificuldades">7. Dificuldades Encontradas e Soluções</h2>
 
   <table>
     <thead>
@@ -282,7 +316,7 @@
   </table>
 
   <!-- 8. DIVISÃO DE TAREFAS -->
-  <h2>8. Divisão de Tarefas</h2>
+  <h2 id="sec8-divisao">8. Divisão de Tarefas</h2>
 
   <table>
     <thead>
@@ -329,7 +363,7 @@
   </table>
 
   <!-- 9. USO DE IA -->
-  <h2>9. Declaração de Uso de IA</h2>
+  <h2 id="sec9-ia">9. Declaração de Uso de IA</h2>
   <div class="highlight">
     <p>
       <strong>Ferramenta utilizada:</strong> GitHub Copilot (assistente de código baseado em IA)

@@ -4,6 +4,15 @@ Pontos importantes gerais: Cores principais (fundo escuro #0d1117, texto claro #
 Estrutura: Reset/base, header/navegação, hero, conteúdo (grids de artigos/categorias), seções (ferramentas/sobre/formulários), footer, responsividade.
 */
 
+:root {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-border: #30363d;
+  --color-primary: #58a6ff;
+  --color-text: #c9d1d9;
+  --color-text-muted: #8b949e;
+}
+
 /* ===== RESET E BASE ===== */
 /* Este CSS é um arquivo de estilos para um blog temático (inspirado no GitHub Dark), focado em design responsivo e acessibilidade.
 Pontos importantes: Reset com box-sizing para incluir padding/bordas no tamanho total; fonte padrão Segoe UI; fundo escuro (#0d1117) e texto claro (#e0e0e0); links com transição suave ao hover; imagens responsivas. */
@@ -21,12 +30,12 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #e0e0e0;
-  background-color: #0d1117;
+  background-color: var(--color-bg);
 }
 
 a {
   text-decoration: none;
-  color: #58a6ff;
+  color: var(--color-primary);
   transition: color 0.3s ease;
 }
 
@@ -47,8 +56,8 @@ ul {
 /* ===== HEADER ===== */
 /* Header fixo (sticky) com fundo escuro (#161b22); logo com ícone e texto destacado em azul (#58a6ff); navegação horizontal com efeitos de underline ao hover; menu mobile oculto por padrão. */
 .site-header {
-  background-color: #161b22;
-  border-bottom: 1px solid #30363d;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -80,7 +89,7 @@ ul {
 }
 
 .logo a span {
-  color: #58a6ff;
+  color: var(--color-primary);
 }
 
 /* ===== NAVEGAÇÃO ===== */
@@ -92,7 +101,7 @@ ul {
 }
 
 .main-nav a {
-  color: #c9d1d9;
+  color: var(--color-text);
   font-weight: 500;
   padding: 0.5rem 0;
   position: relative;
@@ -106,13 +115,13 @@ ul {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #58a6ff;
+  background-color: var(--color-primary);
   transition: width 0.3s ease;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: #58a6ff;
+  color: var(--color-primary);
 }
 
 .main-nav a:hover::after,
@@ -125,7 +134,7 @@ ul {
   display: none;
   background: none;
   border: none;
-  color: #c9d1d9;
+  color: var(--color-text);
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -133,10 +142,10 @@ ul {
 /* ===== HERO / BANNER ===== */
 /* Gradiente de fundo escuro para destaque; título grande com parte azul, subtítulo e tags estilizadas; centralizado e responsivo. */
 .hero {
-  background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%);
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 50%, #1a2332 100%);
   padding: 5rem 2rem;
   text-align: center;
-  border-bottom: 1px solid #30363d;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .hero h1 {
@@ -146,12 +155,12 @@ ul {
 }
 
 .hero h1 span {
-  color: #58a6ff;
+  color: var(--color-primary);
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #8b949e;
+  color: var(--color-text-muted);
   max-width: 600px;
   margin: 0 auto 2rem;
 }
@@ -165,11 +174,11 @@ ul {
 
 .hero-tags span {
   background-color: #21262d;
-  color: #58a6ff;
+  color: var(--color-primary);
   padding: 0.4rem 1rem;
   border-radius: 2rem;
   font-size: 0.85rem;
-  border: 1px solid #30363d;
+  border: 1px solid var(--color-border);
 }
 
 /* ===== CONTEÚDO PRINCIPAL ===== */
@@ -199,8 +208,8 @@ ul {
 }
 
 .article-card {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -208,7 +217,7 @@ ul {
 
 .article-card:hover {
   transform: translateY(-4px);
-  border-color: #58a6ff;
+  border-color: var(--color-primary);
 }
 
 .article-card-img {
@@ -225,7 +234,7 @@ ul {
 .article-card-category {
   display: inline-block;
   background-color: #1f6feb33;
-  color: #58a6ff;
+  color: var(--color-primary);
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
   font-size: 0.75rem;
@@ -246,11 +255,11 @@ ul {
 }
 
 .article-card h3 a:hover {
-  color: #58a6ff;
+  color: var(--color-primary);
 }
 
 .article-card p {
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
@@ -264,7 +273,7 @@ ul {
 }
 
 .article-meta .author {
-  color: #58a6ff;
+  color: var(--color-primary);
 }
 
 /* ===== PÁGINA DE ARTIGO COMPLETO ===== */
@@ -305,7 +314,7 @@ ul {
 }
 
 .article-body {
-  color: #c9d1d9;
+  color: var(--color-text);
   font-size: 1.05rem;
   line-height: 1.8;
 }
@@ -315,7 +324,7 @@ ul {
   font-size: 1.6rem;
   margin: 2rem 0 1rem;
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid #30363d;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .article-body h3 {
@@ -352,8 +361,8 @@ ul {
 }
 
 .article-body pre {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 1.5rem;
   overflow-x: auto;
@@ -368,12 +377,12 @@ ul {
 }
 
 .article-body blockquote {
-  border-left: 4px solid #58a6ff;
-  background-color: #161b22;
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-surface);
   padding: 1rem 1.5rem;
   margin: 1.5rem 0;
   border-radius: 0 8px 8px 0;
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-style: italic;
 }
 
@@ -387,8 +396,8 @@ ul {
 }
 
 .category-card {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 2rem;
   text-align: center;
@@ -397,7 +406,7 @@ ul {
 
 .category-card:hover {
   transform: translateY(-4px);
-  border-color: #58a6ff;
+  border-color: var(--color-primary);
 }
 
 .category-icon {
@@ -411,13 +420,13 @@ ul {
 }
 
 .category-card p {
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
 .category-count {
-  color: #58a6ff;
+  color: var(--color-primary);
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -440,7 +449,7 @@ a.category-card:hover {
 }
 
 .category-description {
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 1rem;
   margin-bottom: 1.5rem;
   max-width: 800px;
@@ -457,7 +466,7 @@ a.category-card:hover {
   color: #f0f6fc;
   margin-bottom: 1.5rem;
   padding-left: 0.5rem;
-  border-left: 3px solid #58a6ff;
+  border-left: 3px solid var(--color-primary);
 }
 
 .tools-grid {
@@ -467,8 +476,8 @@ a.category-card:hover {
 }
 
 .tool-card {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 1.5rem;
   display: flex;
@@ -478,7 +487,7 @@ a.category-card:hover {
 }
 
 .tool-card:hover {
-  border-color: #58a6ff;
+  border-color: var(--color-primary);
 }
 
 .tool-icon {
@@ -494,7 +503,7 @@ a.category-card:hover {
 }
 
 .tool-info p {
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 0.85rem;
   margin-bottom: 0.5rem;
 }
@@ -517,8 +526,8 @@ a.category-card:hover {
 /* ===== SOBRE ===== */
 /* Intro centralizada; grid de equipe com avatares, roles e links sociais; hover com borda azul. */
 .about-intro {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 2.5rem;
   margin-bottom: 3rem;
@@ -532,7 +541,7 @@ a.category-card:hover {
 }
 
 .about-intro p {
-  color: #8b949e;
+  color: var(--color-text-muted);
   max-width: 700px;
   margin: 0 auto;
   font-size: 1.05rem;
@@ -546,8 +555,8 @@ a.category-card:hover {
 }
 
 .team-card {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 2rem;
   text-align: center;
@@ -555,7 +564,7 @@ a.category-card:hover {
 }
 
 .team-card:hover {
-  border-color: #58a6ff;
+  border-color: var(--color-primary);
 }
 
 .team-avatar {
@@ -568,7 +577,7 @@ a.category-card:hover {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  border: 3px solid #30363d;
+  border: 3px solid var(--color-border);
 }
 
 .team-card h3 {
@@ -577,13 +586,13 @@ a.category-card:hover {
 }
 
 .team-role {
-  color: #58a6ff;
+  color: var(--color-primary);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
 .team-card p {
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
@@ -595,19 +604,19 @@ a.category-card:hover {
 }
 
 .team-links a {
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 1.2rem;
   transition: color 0.3s ease;
 }
 
 .team-links a:hover {
-  color: #58a6ff;
+  color: var(--color-primary);
 }
 
 /* ===== PROPOSTA EDITORIAL ===== */
 .editorial {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 2.5rem;
 }
@@ -635,15 +644,15 @@ a.category-card:hover {
 }
 
 .editorial-item p {
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
 }
 
 /* ===== FORMULÁRIOS ===== */
 /* Estilos para inputs, textarea e botões (verde/azul); foco com borda azul e sombra; grid para linhas duplas. */
 .form-section {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 2.5rem;
   margin-bottom: 3rem;
@@ -656,7 +665,7 @@ a.category-card:hover {
 }
 
 .form-section > p {
-  color: #8b949e;
+  color: var(--color-text-muted);
   margin-bottom: 2rem;
 }
 
@@ -666,7 +675,7 @@ a.category-card:hover {
 
 .form-group label {
   display: block;
-  color: #c9d1d9;
+  color: var(--color-text);
   font-weight: 500;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
@@ -677,10 +686,10 @@ a.category-card:hover {
 .form-group select {
   width: 100%;
   padding: 0.75rem 1rem;
-  background-color: #0d1117;
-  border: 1px solid #30363d;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
-  color: #c9d1d9;
+  color: var(--color-text);
   font-size: 0.95rem;
   font-family: inherit;
   transition: border-color 0.3s ease;
@@ -690,7 +699,7 @@ a.category-card:hover {
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #58a6ff;
+  border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
 }
 
@@ -742,16 +751,16 @@ a.category-card:hover {
 .newsletter-inline input {
   flex: 1;
   padding: 0.75rem 1rem;
-  background-color: #0d1117;
-  border: 1px solid #30363d;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
-  color: #c9d1d9;
+  color: var(--color-text);
   font-size: 0.95rem;
 }
 
 .newsletter-inline input:focus {
   outline: none;
-  border-color: #58a6ff;
+  border-color: var(--color-primary);
 }
 
 /* ===== INFO DE CONTATO ===== */
@@ -763,8 +772,8 @@ a.category-card:hover {
 }
 
 .contact-item {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 1.5rem;
   text-align: center;
@@ -782,15 +791,15 @@ a.category-card:hover {
 }
 
 .contact-item p {
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
 }
 
 /* ===== FOOTER ===== */
 /* Três colunas (sobre, links, social); ícones sociais com hover; bottom com copyright. */
 .site-footer {
-  background-color: #161b22;
-  border-top: 1px solid #30363d;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
   padding: 3rem 2rem 1.5rem;
   margin-top: 3rem;
 }
@@ -813,7 +822,7 @@ a.category-card:hover {
 }
 
 .footer-about p {
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
 }
 
@@ -824,12 +833,12 @@ a.category-card:hover {
 }
 
 .footer-links a {
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
 }
 
 .footer-links a:hover {
-  color: #58a6ff;
+  color: var(--color-primary);
 }
 
 .footer-social .social-icons {
@@ -845,13 +854,13 @@ a.category-card:hover {
   height: 40px;
   background-color: #21262d;
   border-radius: 8px;
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 1.2rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .footer-social .social-icons a:hover {
-  background-color: #58a6ff;
+  background-color: var(--color-primary);
   color: #ffffff;
 }
 
@@ -859,7 +868,7 @@ a.category-card:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 1.5rem;
-  border-top: 1px solid #30363d;
+  border-top: 1px solid var(--color-border);
   text-align: center;
   color: #484f58;
   font-size: 0.85rem;
@@ -868,16 +877,16 @@ a.category-card:hover {
 /* ===== BREADCRUMB ===== */
 .breadcrumb {
   padding: 1rem 0;
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 0.85rem;
 }
 
 .breadcrumb a {
-  color: #8b949e;
+  color: var(--color-text-muted);
 }
 
 .breadcrumb a:hover {
-  color: #58a6ff;
+  color: var(--color-primary);
 }
 
 .breadcrumb span {
@@ -886,10 +895,10 @@ a.category-card:hover {
 
 /* ===== PÁGINA INTERNA HEADER ===== */
 .page-header {
-  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 100%);
   padding: 3rem 2rem;
   text-align: center;
-  border-bottom: 1px solid #30363d;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .page-header h1 {
@@ -899,7 +908,7 @@ a.category-card:hover {
 }
 
 .page-header p {
-  color: #8b949e;
+  color: var(--color-text-muted);
   font-size: 1.05rem;
 }
 
@@ -932,7 +941,7 @@ a.category-card:hover {
   }
 
   .main-nav li {
-    border-top: 1px solid #30363d;
+    border-top: 1px solid var(--color-border);
   }
 
   .main-nav a {
@@ -1036,3 +1045,4 @@ a.category-card:hover {
     padding: 1.5rem;
   }
 }
+

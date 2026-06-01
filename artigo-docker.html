@@ -16,7 +16,7 @@
         <span class="logo-icon">&#60;/&#62;</span>
         <a href="index.html">Dev<span>Blog</span></a>
       </div>
-      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.querySelector('.main-nav').classList.toggle('active')">&#9776;</button>
+      <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
       <nav class="main-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -220,5 +220,17 @@ npm-debug.log
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.querySelector('.main-nav');
+
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function () {
+          mainNav.classList.toggle('active');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
