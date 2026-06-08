@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Newsletter e Contato — DevBlog</title>
+  <link rel="icon" type="image/png" href="img/Logo.png">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('0WjceL24Z5j6B5gv9');</script>
 </head>
 <body>
 
@@ -26,6 +29,7 @@
           <li><a href="contato.html" class="active">Contato</a></li>
         </ul>
       </nav>
+      <button class="theme-toggle" aria-label="Alternar tema">☀️</button>
     </div>
   </header>
 
@@ -43,7 +47,7 @@
       <h2>📬 Assine nossa Newsletter</h2>
       <p>Receba os melhores artigos sobre tecnologia e programação diretamente no seu e-mail. Publicamos semanalmente!</p>
 
-      <form action="#" method="post">
+      <form id="newsletter-form" data-validate>
         <div class="form-row">
           <div class="form-group">
             <label for="newsletter-nome">Nome completo</label>
@@ -81,7 +85,7 @@
         <div class="contact-item">
           <div class="contact-item-icon">📧</div>
           <h3>E-mail</h3>
-          <p>contato@devblog.com.br</p>
+          <p><a href="mailto:contatodevblog@gmail.com">contatodevblog@gmail.com</a></p>
         </div>
 
         <div class="contact-item">
@@ -103,7 +107,7 @@
       <h2>✉️ Envie uma Mensagem</h2>
       <p>Tem alguma sugestão de artigo, dúvida ou feedback? Preencha o formulário abaixo e entraremos em contato!</p>
 
-      <form action="#" method="post">
+      <form id="contact-form" data-validate>
         <div class="form-row">
           <div class="form-group">
             <label for="contato-nome">Nome completo *</label>
@@ -170,11 +174,6 @@
     </div>
   </footer>
 
-  <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function () {
-      document.querySelector('.main-nav').classList.toggle('active');
-    });
-  </script>
-
+  <script src="js/main.js"></script>
 </body>
 </html>
