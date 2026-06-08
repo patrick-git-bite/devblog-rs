@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
       submitBtn.disabled = true;
 
       // Envia via EmailJS
-      emailjs.sendForm('service_devblog', 'template_contato', contactForm)
+      emailjs.sendForm('service_6l09va8', '4lsvyqd', contactForm)
         .then(function () {
           showSuccess(contactForm, 'Mensagem enviada com sucesso! Recebemos sua mensagem e alguém da equipe entrará em contato em breve.');
           contactForm.reset();
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
       submitBtn.textContent = 'Inscrevendo...';
       submitBtn.disabled = true;
 
-      emailjs.sendForm('service_devblog', 'template_newsletter', newsletterForm)
+      emailjs.sendForm('service_6l09va8', '4lsvyqd', newsletterForm)
         .then(function () {
           showSuccess(newsletterForm, 'Inscrição realizada! Você receberá nossas novidades no e-mail informado.');
           newsletterForm.reset();
