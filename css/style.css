@@ -1046,3 +1046,179 @@ a.category-card:hover {
   }
 }
 
+/* ===== BOTÃO TOGGLE DE TEMA ===== */
+/* Botão para alternar entre modo escuro e claro, posicionado no header */
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-primary);
+  transform: rotate(20deg);
+}
+
+/* ===== MODO CLARO ===== */
+/* Variáveis de cor sobrepostas para o tema light */
+body.light-mode {
+  --color-bg: #ffffff;
+  --color-surface: #f6f8fa;
+  --color-border: #d0d7de;
+  --color-primary: #0969da;
+  --color-text: #1f2328;
+  --color-text-muted: #656d76;
+}
+
+body.light-mode {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+body.light-mode .site-header {
+  background-color: var(--color-surface);
+  border-bottom-color: var(--color-border);
+}
+
+body.light-mode .main-nav a {
+  color: var(--color-text);
+}
+
+body.light-mode .main-nav a:hover,
+body.light-mode .main-nav a.active {
+  color: var(--color-primary);
+}
+
+body.light-mode .hero {
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+}
+
+body.light-mode .hero h1 {
+  color: var(--color-text);
+}
+
+body.light-mode .hero h1 span {
+  color: var(--color-primary);
+}
+
+body.light-mode .hero p {
+  color: var(--color-text-muted);
+}
+
+body.light-mode .article-card,
+body.light-mode .category-card,
+body.light-mode .tool-card {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+body.light-mode .article-card:hover,
+body.light-mode .category-card:hover,
+body.light-mode .tool-card:hover {
+  border-color: var(--color-primary);
+}
+
+body.light-mode .article-card h3,
+body.light-mode .category-card h3,
+body.light-mode .tool-card h3 {
+  color: var(--color-text);
+}
+
+body.light-mode .article-card p,
+body.light-mode .category-card p,
+body.light-mode .tool-card p {
+  color: var(--color-text-muted);
+}
+
+body.light-mode .site-footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+body.light-mode .site-footer h3 {
+  color: var(--color-text);
+}
+
+body.light-mode .site-footer a {
+  color: var(--color-text-muted);
+}
+
+body.light-mode .site-footer a:hover {
+  color: var(--color-primary);
+}
+
+body.light-mode .page-header {
+  background: linear-gradient(135deg, #e8eef5 0%, #f0f4f8 100%);
+}
+
+body.light-mode .page-header h1 {
+  color: var(--color-text);
+}
+
+body.light-mode .form-section {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+body.light-mode input,
+body.light-mode select,
+body.light-mode textarea {
+  background-color: var(--color-bg);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+body.light-mode .article-body {
+  color: var(--color-text);
+}
+
+body.light-mode .article-body pre,
+body.light-mode .article-body code {
+  background-color: #f0f4f8;
+  color: #1f2328;
+}
+
+body.light-mode .article-body blockquote {
+  border-left-color: var(--color-primary);
+  background-color: #f0f4f8;
+}
+
+/* ===== VALIDAÇÃO DE FORMULÁRIO ===== */
+/* Estilos para feedback visual de erro e sucesso nos formulários */
+.input-error {
+  border-color: #f85149 !important;
+  box-shadow: 0 0 0 3px rgba(248, 81, 73, 0.2);
+}
+
+.error-message {
+  color: #f85149;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.form-status {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #1a3a2a;
+  border: 1px solid #238636;
+  color: #3fb950;
+  font-weight: 500;
+}
+
+body.light-mode .form-status {
+  background-color: #dafbe1;
+  border-color: #218838;
+  color: #1a7f37;
+}
+

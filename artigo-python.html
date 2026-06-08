@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Python para análise de dados: primeiros passos — DevBlog</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="img/Logo.png">
   <!-- Este é um artigo completo sobre Python para análise de dados, parte do blog DevBlog. Estrutura HTML5 semântica: DOCTYPE, meta charset/viewport, title, link CSS. -->
 </head>
 <body>
@@ -27,6 +28,7 @@
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
+      <button class="theme-toggle" aria-label="Alternar tema">☀️</button>
     </div>
   </header>
 
@@ -235,17 +237,6 @@ plt.show()</code></pre>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const menuToggle = document.querySelector('.menu-toggle');
-      const mainNav = document.querySelector('.main-nav');
-
-      if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', function () {
-          mainNav.classList.toggle('active');
-        });
-      }
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
