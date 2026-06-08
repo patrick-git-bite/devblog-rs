@@ -2,7 +2,8 @@
 
 Blog desenvolvido como projeto acadêmico da disciplina de **Programação Web**, focado em conteúdos sobre desenvolvimento, segurança, DevOps e ferramentas para desenvolvedores.
 
-🔗 **Site publicado:** [http://grupo5.neurosky.com.br](http://grupo5.neurosky.com.br)
+🔗 **Site publicado:** [https://devblog-rs.vercel.app](https://devblog-rs.vercel.app)  
+🔗 **Mirror (FTP):** [http://grupo5.neurosky.com.br](http://grupo5.neurosky.com.br)
 
 ---
 
@@ -118,7 +119,10 @@ git push origin feature/sua-alteracao
 
 - HTML5
 - CSS3
+- JavaScript
+- EmailJS (envio de formulários)
 - Git & GitHub
+- Vercel (deploy automático)
 - FileZilla (deploy via FTP)
 
 ---
