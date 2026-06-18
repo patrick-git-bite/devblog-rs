@@ -209,4 +209,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 8000);
   }
 
+  // Filtro de artigos por categoria
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const categorySections = document.querySelectorAll('.category-section[data-categoria]');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filtro = btn.dataset.filter;
+
+      categorySections.forEach(section => {
+        if (filtro === 'todos' || section.dataset.categoria === filtro) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+    });
+  });
+
 });

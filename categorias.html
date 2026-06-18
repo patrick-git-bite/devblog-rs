@@ -87,12 +87,21 @@
 
     </div>
 
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <button class="filter-btn" data-filter="ia">IA</button>
+      <button class="filter-btn" data-filter="seguranca">Segurança</button>
+      <button class="filter-btn" data-filter="devops">DevOps</button>
+    </div>
+
     <!-- ============================================================ -->
     <!-- SEÇÕES DE ARTIGOS POR CATEGORIA -->
     <!-- ============================================================ -->
 
     <!-- DESENVOLVIMENTO WEB -->
-    <section id="web" class="category-section">
+    <section id="web" data-categoria="web" class="category-section">
       <h2 class="section-title">🌐 Desenvolvimento Web</h2>
       <p class="category-description">Artigos sobre HTML, CSS, JavaScript, frameworks e o ecossistema web moderno. Desde os fundamentos até técnicas avançadas de front-end e back-end.</p>
 
@@ -113,7 +122,7 @@
     </section>
 
     <!-- MOBILE -->
-    <section id="mobile" class="category-section">
+    <section id="mobile" data-categoria="mobile" class="category-section">
       <h2 class="section-title">📱 Mobile</h2>
       <p class="category-description">Tudo sobre desenvolvimento de aplicativos móveis multiplataforma. Comparativos, tutoriais e tendências do mercado de apps para iOS e Android.</p>
 
@@ -134,7 +143,7 @@
     </section>
 
     <!-- INTELIGÊNCIA ARTIFICIAL -->
-    <section id="ia" class="category-section">
+    <section id="ia" data-categoria="ia" class="category-section">
       <h2 class="section-title">🤖 Inteligência Artificial</h2>
       <p class="category-description">Exploramos o mundo da IA: modelos de linguagem, IA generativa, machine learning e como essas tecnologias estão impactando o mercado de trabalho e o desenvolvimento de software.</p>
 
@@ -155,7 +164,7 @@
     </section>
 
     <!-- SEGURANÇA -->
-    <section id="seguranca" class="category-section">
+    <section id="seguranca" data-categoria="seguranca" class="category-section">
       <h2 class="section-title">🔒 Segurança</h2>
       <p class="category-description">Artigos sobre cibersegurança para desenvolvedores. Vulnerabilidades comuns, boas práticas de codificação segura, OWASP e ferramentas de análise de segurança.</p>
 
@@ -176,7 +185,7 @@
     </section>
 
     <!-- DEVOPS -->
-    <section id="devops" class="category-section">
+    <section id="devops" data-categoria="devops" class="category-section">
       <h2 class="section-title">⚙️ DevOps</h2>
       <p class="category-description">Automatize tudo! Docker, containers, CI/CD, Kubernetes, infraestrutura como código e práticas de DevOps para acelerar o ciclo de desenvolvimento.</p>
 

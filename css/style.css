@@ -436,6 +436,44 @@ a.category-card {
   display: block;
   color: inherit;
   cursor: pointer;
+
+
+/* ===== FILTER BUTTONS ===== */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1.5rem auto 2.5rem;
+  max-width: 900px;
+}
+
+.filter-btn {
+  background: #21262d;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 20px;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.filter-btn:hover {
+  background: #30363d;
+  color: #f0f6fc;
+}
+
+.filter-btn.active {
+  background: #58a6ff;
+  color: #0d1117;
+  border-color: #58a6ff;
+  font-weight: 600;
+}
+
+.category-section.hidden {
+  display: none;
+}
 }
 
 a.category-card:hover {
