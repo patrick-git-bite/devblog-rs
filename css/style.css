@@ -436,7 +436,7 @@ a.category-card {
   display: block;
   color: inherit;
   cursor: pointer;
-
+}
 
 /* ===== FILTER BUTTONS ===== */
 .filter-buttons {
@@ -473,7 +473,6 @@ a.category-card {
 
 .category-section.hidden {
   display: none;
-}
 }
 
 a.category-card:hover {
