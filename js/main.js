@@ -230,4 +230,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // ===== MAPA INTERATIVO (LEAFLET) =====
+  // Card flip + mapa com marcador na Uniftec
+  const locationCard = document.getElementById('location-card');
+  let mapInitialized = false;
+
+  if (locationCard) {
+    locationCard.addEventListener('click', function () {
+      locationCard.classList.toggle('flipped');
+
+      // Inicializa o mapa apenas na primeira vez que abre
+      if (!mapInitialized && typeof L !== 'undefined') {
+        mapInitialized = true;
+        setTimeout(function () {
+          const map = L.map('map').setView([-29.1634, -51.1797], 16);
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap'
+          }).addTo(map);
+
+          L.marker([-29.1634, -51.1797])
+            .addTo(map)
+            .bindPopup('<strong>Uniftec</strong><br>R. Gustavo Ramos Sehbe, 107<br>Caxias do Sul - RS')
+            .openPopup();
+        }, 400);
+      }
+    });
+  }
+
 });

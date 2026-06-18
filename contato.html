@@ -6,7 +6,9 @@
   <title>Newsletter e Contato — DevBlog</title>
   <link rel="icon" type="image/png" href="img/Logo.png">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>emailjs.init('0WjceL24Z5j6B5gv9');</script>
 </head>
 <body>
@@ -94,10 +96,18 @@
           <p><a href="https://github.com/patrick-git-bite/devblog-rs" target="_blank" rel="noopener noreferrer">github.com/patrick-git-bite/devblog-rs</a></p>
         </div>
 
-        <div class="contact-item">
-          <div class="contact-item-icon">📍</div>
-          <h3>Localização</h3>
-          <p>Centro Universitário Uniftec<br>R. Gustavo Ramos Sehbe, 107 - Cinquentenário<br>Caxias do Sul - RS, 95012-669</p>
+        <div class="contact-item location-card" id="location-card">
+          <div class="location-card-inner">
+            <div class="location-card-front">
+              <div class="contact-item-icon">📍</div>
+              <h3>Localização</h3>
+              <p>Centro Universitário Uniftec<br>R. Gustavo Ramos Sehbe, 107 - Cinquentenário<br>Caxias do Sul - RS, 95012-669</p>
+              <span class="location-hint">🗺️ Clique para ver no mapa</span>
+            </div>
+            <div class="location-card-back">
+              <div id="map"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
