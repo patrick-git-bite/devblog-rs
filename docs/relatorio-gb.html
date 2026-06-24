@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório de Entrega 2 (GB) — DevBlog</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.7;
+      padding: 2.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cover {
+      text-align: center;
+      padding: 4rem 2rem;
+      border-bottom: 3px solid #1f6feb;
+      margin-bottom: 3rem;
+    }
+    .cover h1 { font-size: 2rem; color: #1f6feb; margin-bottom: 0.5rem; }
+    .cover h2 { font-size: 1.3rem; color: #333; margin-bottom: 2rem; font-weight: 400; }
+    .cover .info { font-size: 0.95rem; color: #555; line-height: 2; }
+
+    h2 {
+      font-size: 1.4rem;
+      color: #1f6feb;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #e0e8f0;
+    }
+    h3 {
+      font-size: 1.1rem;
+      color: #333;
+      margin: 1.5rem 0 0.5rem;
+    }
+    p { margin-bottom: 1rem; }
+    ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid #d0d7de;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+    }
+    th {
+      background: #f0f4f8;
+      font-weight: 600;
+    }
+    tr:nth-child(even) { background: #f8fafb; }
+
+    .highlight {
+      background: #f0f7ff;
+      border-left: 4px solid #1f6feb;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .highlight strong { color: #1f6feb; }
+
+    .bug {
+      background: #fff5f5;
+      border-left: 4px solid #e53e3e;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    @media print {
+      body { padding: 1rem; }
+      .cover { page-break-after: always; }
+      h2 { page-break-after: avoid; }
+      table { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover">
+    <h1>Relatório de Entrega 2 (GB)</h1>
+    <h2>Programação Web</h2>
+    <div class="info">
+      <strong>Disciplina:</strong> Programação Web<br>
+      <strong>Professor:</strong> Prof. Juliano Paulo Menzen<br>
+      <strong>Semestre:</strong> 2026/1<br>
+      <strong>Instituição:</strong> Uniftec<br>
+      <strong>Nome do projeto:</strong> DevBlog<br><br>
+      <strong>Integrantes:</strong><br>
+      Patrick Brando — 053471<br>
+      Rafael Lima — 056722<br>
+      Pedro Pereira — 064343<br><br>
+      <strong>Data de entrega:</strong> Junho de 2026
+    </div>
+  </div>
+
+  <nav aria-label="Sumário">
+    <h3>Sumário</h3>
+    <ol>
+      <li><a href="#sec1-intro">1. Introdução</a></li>
+      <li><a href="#sec2-funcionalidades">2. Funcionalidades JavaScript Implementadas</a></li>
+      <li><a href="#sec3-biblioteca">3. Biblioteca Utilizada — AOS</a></li>
+      <li><a href="#sec4-compat">4. Testes de Compatibilidade</a></li>
+      <li><a href="#sec5-comparacao">5. Comparação com a Entrega 1 (GA)</a></li>
+      <li><a href="#sec6-divisao">6. Divisão de Tarefas</a></li>
+      <li><a href="#sec7-reflexao">7. Reflexão dos Integrantes</a></li>
+      <li><a href="#sec8-ia">8. Declaração de Uso de IA</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. INTRODUÇÃO -->
+  <h2 id="sec1-intro">1. Introdução</h2>
+  <p>
+    Esta entrega representa a segunda fase do projeto <strong>DevBlog</strong>, com foco na implementação de funcionalidades JavaScript. O trabalho exigia no mínimo 3 funcionalidades JS puras e 1 biblioteca externa. A equipe entregou 4 funcionalidades e 1 biblioteca, evoluindo significativamente o projeto em relação à entrega anterior.
+  </p>
+  <p>
+    O projeto está publicado em: <a href="https://devblog-rs.vercel.app" target="_blank">https://devblog-rs.vercel.app</a> e o repositório em: <a href="https://github.com/patrick-git-bite/devblog-rs" target="_blank">https://github.com/patrick-git-bite/devblog-rs</a>
+  </p>
+
+  <!-- 2. FUNCIONALIDADES JS -->
+  <h2 id="sec2-funcionalidades">2. Funcionalidades JavaScript Implementadas</h2>
+
+  <h3>2.1 Menu Hambúrguer via addEventListener ✅ (feito no GA, migrado para JS externo)</h3>
+  <p>
+    O menu hambúrguer responsivo para mobile foi implementado na entrega anterior com <code>onclick</code> inline. Nesta entrega, foi migrado para um arquivo JS externo (<code>js/main.js</code>) usando <code>addEventListener</code>, seguindo boas práticas de separação de responsabilidades.
+  </p>
+  <div class="highlight">
+    <strong>Evento utilizado:</strong> click | <strong>Elemento:</strong> .menu-toggle | <strong>Resultado:</strong> toggle da classe <code>active</code> no elemento <code>.main-nav</code>
+  </div>
+
+  <h3>2.2 Validação do Formulário de Contato com Feedback Visual</h3>
+  <p>
+    O formulário da página <code>contato.html</code> passou a ter validação em JavaScript com feedback visual imediato: bordas vermelhas nos campos inválidos, mensagens de erro por campo e mensagem de sucesso ao enviar corretamente.
+  </p>
+  <div class="highlight">
+    <strong>Técnicas:</strong> Manipulação do DOM, <code>addEventListener('submit')</code>, <code>classList.add/remove</code>, criação dinâmica de elementos de erro
+  </div>
+
+  <h3>2.3 Formulário Funcional com Envio de E-mail</h3>
+  <p>
+    Ao enviar o formulário de contato, os dados são enviados para <strong>contatodevblog@gmail.com</strong> via integração com serviço de e-mail. O remetente recebe uma resposta automática confirmando o recebimento da mensagem.
+  </p>
+
+  <h3>2.4 Modo Claro/Escuro com localStorage</h3>
+  <p>
+    Um botão de toggle no header permite ao usuário alternar entre tema claro e escuro. A preferência é salva no <code>localStorage</code> do navegador, persistindo entre sessões.
+  </p>
+  <div class="highlight">
+    <strong>API utilizada:</strong> localStorage | <strong>Método:</strong> <code>localStorage.setItem/getItem('theme')</code> | <strong>Resultado:</strong> tema salvo entre visitas
+  </div>
+
+  <h3>2.5 Filtro de Artigos por Categoria (Pedro)</h3>
+  <p>
+    Na página de categorias e na home, botões de filtro (Todos / Web / Mobile / IA / Segurança / DevOps) permitem filtrar os cards de artigos via manipulação do DOM, sem recarregar a página.
+  </p>
+
+  <!-- 3. BIBLIOTECA AOS -->
+  <h2 id="sec3-biblioteca">3. Biblioteca Utilizada — AOS (Animate on Scroll)</h2>
+
+  <h3>O que é o AOS?</h3>
+  <p>
+    AOS (<em>Animate on Scroll</em>) é uma biblioteca JavaScript leve que adiciona animações de entrada aos elementos da página conforme o usuário rola o conteúdo. Foi integrada via CDN, sem necessidade de instalação.
+  </p>
+
+  <h3>Justificativa da escolha</h3>
+  <p>
+    O AOS foi escolhido por ser leve, fácil de integrar e melhorar a experiência do usuário sem comprometer a performance. Com apenas dois arquivos (CSS + JS) carregados via CDN e atributos <code>data-aos</code> no HTML, é possível adicionar animações profissionais com mínimo esforço.
+  </p>
+
+  <h3>Como foi integrado</h3>
+  <ul>
+    <li>CSS adicionado no <code>&lt;head&gt;</code> de todas as páginas via CDN: <code>https://unpkg.com/aos@2.3.4/dist/aos.css</code></li>
+    <li>JS adicionado antes do <code>&lt;/body&gt;</code> de todas as páginas: <code>https://unpkg.com/aos@2.3.4/dist/aos.js</code></li>
+    <li>Inicializado com <code>AOS.init()</code></li>
+    <li>Atributo <code>data-aos="fade-up"</code> adicionado nos cards de artigos, ferramentas, equipe e seções principais</li>
+  </ul>
+
+  <div class="highlight">
+    <strong>Páginas com AOS:</strong> index.html, categorias.html, ferramentas.html, sobre.html, contato.html, artigo.html, artigo-ia.html, artigo-mobile.html, artigo-seguranca.html, artigo-docker.html, artigo-python.html
+  </div>
+
+  <!-- 4. TESTES DE COMPATIBILIDADE -->
+  <h2 id="sec4-compat">4. Testes de Compatibilidade</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Plataforma</th>
+        <th>Chrome</th>
+        <th>Firefox</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Desktop</td>
+        <td>✅ OK</td>
+        <td>✅ OK</td>
+      </tr>
+      <tr>
+        <td>Mobile (simulado)</td>
+        <td>✅ OK</td>
+        <td>✅ OK</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Bugs encontrados</h3>
+
+  <div class="bug">
+    <strong>Bug #1 — Tema claro com baixo contraste</strong><br>
+    No modo claro, o texto de algumas seções fica com contraste reduzido, dificultando a leitura. No modo escuro o problema não ocorre pois as cores foram otimizadas para fundo escuro. <br>
+    <strong>Status:</strong> Identificado durante os testes de compatibilidade.
+  </div>
+
+  <!-- 5. COMPARAÇÃO COM GA -->
+  <h2 id="sec5-comparacao">5. Comparação com a Entrega 1 (GA)</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Aspecto</th>
+        <th>Entrega 1 (GA)</th>
+        <th>Entrega 2 (GB)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JavaScript</td>
+        <td>Apenas onclick inline no menu</td>
+        <td>4 funcionalidades JS + arquivo externo</td>
+      </tr>
+      <tr>
+        <td>Formulário</td>
+        <td>Estático, sem validação JS</td>
+        <td>Validação com feedback visual + envio de e-mail</td>
+      </tr>
+      <tr>
+        <td>Tema</td>
+        <td>Apenas modo escuro fixo</td>
+        <td>Toggle claro/escuro com localStorage</td>
+      </tr>
+      <tr>
+        <td>Animações</td>
+        <td>Apenas transições CSS</td>
+        <td>Animações de scroll com biblioteca AOS</td>
+      </tr>
+      <tr>
+        <td>Organização do JS</td>
+        <td>Scripts inline nas páginas</td>
+        <td>Arquivo externo js/main.js centralizado</td>
+      </tr>
+      <tr>
+        <td>Favicon</td>
+        <td>Sem favicon</td>
+        <td>Favicon com logo do DevBlog em todas as páginas</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 6. DIVISÃO DE TAREFAS -->
+  <h2 id="sec6-divisao">6. Divisão de Tarefas</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Integrante</th>
+        <th>Responsabilidades no GB</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Patrick</strong></td>
+        <td>
+          <ul>
+            <li>Arquivo JS externo (js/main.js) — migração de todos os scripts inline</li>
+            <li>Validação do formulário de contato com feedback visual</li>
+            <li>Formulário funcional com envio de e-mail</li>
+            <li>Modo claro/escuro com localStorage</li>
+            <li>Favicon em todas as páginas</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Rafael</strong></td>
+        <td>
+          <ul>
+            <li>Integração da biblioteca AOS em todas as páginas via CDN</li>
+            <li>Adição de atributos data-aos nos cards de artigos, ferramentas, equipe e seções</li>
+            <li>Testes de compatibilidade no Chrome e Firefox (desktop e mobile)</li>
+            <li>Relatório da Entrega 2 (este documento)</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Pedro</strong></td>
+        <td>
+          <ul>
+            <li>Filtro de artigos por categoria via manipulação do DOM</li>
+            <li>Deploy da versão final via FTP no servidor da disciplina</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 7. REFLEXÃO -->
+  <h2 id="sec7-reflexao">7. Reflexão dos Integrantes</h2>
+
+  <h3>Patrick</h3>
+  <p>
+    Nesta entrega aprendi na prática como organizar o JavaScript de forma profissional, separando os scripts em um arquivo externo e usando addEventListener em vez de onclick inline. A implementação do modo escuro com localStorage foi o desafio mais interessante, pois envolve persistir dados no navegador do usuário.
+  </p>
+
+  <h3>Rafael</h3>
+  <p>
+    Integrar a biblioteca AOS me mostrou como é simples adicionar animações profissionais com poucas linhas de código. O processo de testar o site em diferentes navegadores também foi importante, pois identifiquei um bug real de contraste no modo claro que não tinha percebido antes. Aprendi que testar é tão importante quanto desenvolver.
+  </p>
+
+  <h3>Pedro</h3>
+  <p>
+    Implementar o filtro de artigos por categoria foi o desafio mais técnico desta entrega. Aprendi a manipular o DOM para mostrar e esconder elementos dinamicamente, sem precisar recarregar a página, o que melhora muito a experiência do usuário.
+  </p>
+
+  <!-- 8. USO DE IA -->
+  <h2 id="sec8-ia">8. Declaração de Uso de IA</h2>
+  <div class="highlight">
+    <p><strong>Ferramenta utilizada:</strong> GitHub Copilot e Claude (Anthropic)</p>
+    <p><strong>O que foi gerado:</strong> Auxílio na estruturação do código JavaScript, sugestões de implementação para validação de formulário e integração do AOS. O relatório foi redigido com apoio de IA para organização do conteúdo.</p>
+    <p><strong>Como foi adaptado:</strong> Todo o código foi revisado e compreendido pelos integrantes antes de ser aplicado. Cada membro é capaz de explicar as funcionalidades que implementou.</p>
+  </div>
+
+  <p style="text-align:center; color:#999; margin-top:3rem; font-size:0.85rem;">
+    — Fim do Relatório —
+  </p>
+
+</body>
+</html>
